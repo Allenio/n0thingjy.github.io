@@ -108,20 +108,20 @@
 
 
 
-  <meta name="description" content="字节大小1 byte = 8 bit1 k = 1024 byte  进制组成与换算二进制二进制(0b开头,由0,1组成)eg : (10110110) = 2^7*1 + 2^6*0 + 2^5*1 + 2^4*1 + 2^3*0 + 2^2*1 + 2^1*1 + 2^0*0 = 182(十进制结果) 十进制十进制(由0…..9组成)eg : (182) 八进制八进制(0开头,由0…7组成)从">
+  <meta name="description" content="字节大小1 byte = 8 bit1 k = 1024 byte一个字节是八位eg : 00100100(这是一个字节)  进制组成与换算二进制二进制(0b开头,由0,1组成)eg : (10110110) = 2^7*1 + 2^6*0 + 2^5*1 + 2^4*1 + 2^3*0 + 2^2*1 + 2^1*1 + 2^0*0 = 182(十进制结果) 十进制十进制(由0…..9组成)eg">
 <meta name="keywords" content="Java学习总结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="二进制、原码、反码、补码问题">
 <meta property="og:url" content="https://n0thingjy.github.io/2018/12/05/二进制/index.html">
 <meta property="og:site_name" content="n0thing的个人博客">
-<meta property="og:description" content="字节大小1 byte = 8 bit1 k = 1024 byte  进制组成与换算二进制二进制(0b开头,由0,1组成)eg : (10110110) = 2^7*1 + 2^6*0 + 2^5*1 + 2^4*1 + 2^3*0 + 2^2*1 + 2^1*1 + 2^0*0 = 182(十进制结果) 十进制十进制(由0…..9组成)eg : (182) 八进制八进制(0开头,由0…7组成)从">
+<meta property="og:description" content="字节大小1 byte = 8 bit1 k = 1024 byte一个字节是八位eg : 00100100(这是一个字节)  进制组成与换算二进制二进制(0b开头,由0,1组成)eg : (10110110) = 2^7*1 + 2^6*0 + 2^5*1 + 2^4*1 + 2^3*0 + 2^2*1 + 2^1*1 + 2^0*0 = 182(十进制结果) 十进制十进制(由0…..9组成)eg">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://github.com/n0thingJy/n0thingjy.github.io/blob/master/images/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/%E5%8D%81%E8%BF%9B%E5%88%B6%E8%BD%AC%E5%8D%81%E8%BF%9B%E5%88%B6.png?raw=true">
 <meta property="og:image" content="https://github.com/n0thingJy/n0thingjy.github.io/blob/master/images/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/%E5%8D%81%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E4%BA%8C%E8%BF%9B%E5%88%B6.png?raw=true">
-<meta property="og:updated_time" content="2018-12-04T18:08:07.449Z">
+<meta property="og:updated_time" content="2018-12-05T17:36:36.631Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二进制、原码、反码、补码问题">
-<meta name="twitter:description" content="字节大小1 byte = 8 bit1 k = 1024 byte  进制组成与换算二进制二进制(0b开头,由0,1组成)eg : (10110110) = 2^7*1 + 2^6*0 + 2^5*1 + 2^4*1 + 2^3*0 + 2^2*1 + 2^1*1 + 2^0*0 = 182(十进制结果) 十进制十进制(由0…..9组成)eg : (182) 八进制八进制(0开头,由0…7组成)从">
+<meta name="twitter:description" content="字节大小1 byte = 8 bit1 k = 1024 byte一个字节是八位eg : 00100100(这是一个字节)  进制组成与换算二进制二进制(0b开头,由0,1组成)eg : (10110110) = 2^7*1 + 2^6*0 + 2^5*1 + 2^4*1 + 2^3*0 + 2^2*1 + 2^1*1 + 2^0*0 = 182(十进制结果) 十进制十进制(由0…..9组成)eg">
 <meta name="twitter:image" content="https://github.com/n0thingJy/n0thingjy.github.io/blob/master/images/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/%E5%8D%81%E8%BF%9B%E5%88%B6%E8%BD%AC%E5%8D%81%E8%BF%9B%E5%88%B6.png?raw=true">
 
 
@@ -397,12 +397,24 @@
                 
               
 
-              <time title="创建时间：2018-12-05 00:30:14 / 修改时间：02:08:07" itemprop="dateCreated datePublished" datetime="2018-12-05T00:30:14+08:00">2018-12-05</time>
+              <time title="创建时间：2018-12-05 00:30:14" itemprop="dateCreated datePublished" datetime="2018-12-05T00:30:14+08:00">2018-12-05</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-06 01:36:36" itemprop="dateModified" datetime="2018-12-06T01:36:36+08:00">2018-12-06</time>
               
             
           </span>
@@ -453,7 +465,7 @@
       
 
       
-        <h2 id="字节大小"><a href="#字节大小" class="headerlink" title="字节大小"></a>字节大小</h2><p>1 byte = 8 bit<br>1 k = 1024 byte</p>
+        <h2 id="字节大小"><a href="#字节大小" class="headerlink" title="字节大小"></a>字节大小</h2><p>1 byte = 8 bit<br>1 k = 1024 byte<br>一个字节是八位<br>eg : 00100100(这是一个字节)</p>
 <hr>
 <h2 id="进制组成与换算"><a href="#进制组成与换算" class="headerlink" title="进制组成与换算"></a>进制组成与换算</h2><h3 id="二进制"><a href="#二进制" class="headerlink" title="二进制"></a>二进制</h3><p>二进制(0b开头,由0,1组成)<br>eg : (10110110) = 2^7*1 + 2^6*0 + 2^5*1 + 2^4*1 + 2^3*0 + 2^2*1 + 2^1*1 + 2^0*0 = 182(<strong>十进制结果</strong>)</p>
 <h3 id="十进制"><a href="#十进制" class="headerlink" title="十进制"></a>十进制</h3><p>十进制(由0…..9组成)<br>eg : (182)</p>
@@ -464,9 +476,72 @@
 <p><center>十进制转十进制</center><br><img src="https://github.com/n0thingJy/n0thingjy.github.io/blob/master/images/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/%E5%8D%81%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E4%BA%8C%E8%BF%9B%E5%88%B6.png?raw=true" alt=""></p>
 <p><center>十进制转二进制</center><br><strong>十进制转八进制,十进制转十六进制同理</strong></p>
 <hr>
-<h2 id="原码-反码-补码"><a href="#原码-反码-补码" class="headerlink" title="原码,反码,补码"></a>原码,反码,补码</h2><h3 id="原码"><a href="#原码" class="headerlink" title="原码"></a>原码</h3><p>原码 : 正数的原码最高位是0.负数的最高位是1,其他的是数值位.<br>eg :     值&nbsp;&nbsp;&nbsp;符号位&nbsp;&nbsp;&nbsp;数值位<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0000111<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0000111</p>
-<h3 id="反码"><a href="#反码" class="headerlink" title="反码"></a>反码</h3><p>反码 : 正数的反码和原码相同.负数的反码与原码符号位相同,数值位取反(就是1变0,0变1).<br>eg :     值&nbsp;&nbsp;&nbsp;符号位&nbsp;&nbsp;&nbsp;数值位<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0000111<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1111000</p>
-<h3 id="补码"><a href="#补码" class="headerlink" title="补码"></a>补码</h3><p>补码 : 正数的补码与原码相同.负数的补码是在反码的基础上加1.<br>eg :     值&nbsp;&nbsp;&nbsp;符号位&nbsp;&nbsp;&nbsp;数值位<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0000111<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1111001</p>
+<h2 id="原码-反码-补码"><a href="#原码-反码-补码" class="headerlink" title="原码,反码,补码"></a>原码,反码,补码</h2><h3 id="原码"><a href="#原码" class="headerlink" title="原码"></a>原码</h3><p>原码 : 正数的原码最高位是0.负数的最高位是1,其他的是数值位.</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>符号位</th>
+<th>数值位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+7</td>
+<td>0</td>
+<td>0000111</td>
+</tr>
+<tr>
+<td>-7</td>
+<td>1</td>
+<td>0000111</td>
+</tr>
+</tbody>
+</table>
+<h3 id="反码"><a href="#反码" class="headerlink" title="反码"></a>反码</h3><p>反码 : 正数的反码和原码相同.负数的反码与原码符号位相同,数值位取反(就是1变0,0变1).</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>符号位</th>
+<th>数值位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+7</td>
+<td>0</td>
+<td>0000111</td>
+</tr>
+<tr>
+<td>-7</td>
+<td>1</td>
+<td>1111000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="补码"><a href="#补码" class="headerlink" title="补码"></a>补码</h3><p>补码 : 正数的补码与原码相同.负数的补码是在反码的基础上加1.</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>符号位</th>
+<th>数值位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+7</td>
+<td>0</td>
+<td>0000111</td>
+</tr>
+<tr>
+<td>-7</td>
+<td>1</td>
+<td>1111001</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -512,6 +587,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/06/数据类型/" rel="prev" title="数据类型">
+                数据类型 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -581,7 +660,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
