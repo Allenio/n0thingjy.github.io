@@ -108,25 +108,28 @@
 
 
 
-  <meta name="description" content="CMD编译格式javac + 文件名+ 扩展名 eg : javac HelloWorld.java (编译)java + 类名(不加扩展名) eg : java HelloWorld (执行)  Java标识符及命名规则(见名知意)标识符组成 数字、字母、$、_ 注意 : Java关键字不可以作为标识符，(go to,const)为旧版本保留字段亦不可作为标识符使用。 包的命名 文件夹 单极 :">
+  <meta name="description" content="一维数组定义格式:A:数据类型[] 数组名; B:数据类型 数组名[]; eg: A:int[] a;     B:int a[]; 推荐使用第一种. 初始化123456789101112int[] arr = new int[3];/*左边:	 int:说明数组中的元素的数据类型是int类型.	 []:说明这是一个数组.	 arr:是数组的名称.  右边:	 new:为数组分配内存空间.	 in">
 <meta name="keywords" content="Java学习总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java初学小问题">
-<meta property="og:url" content="https://n0thingjy.github.io/2018/12/04/Java初学小问题/index.html">
+<meta property="og:title" content="数组">
+<meta property="og:url" content="https://n0thingjy.github.io/2018/12/06/数组/index.html">
 <meta property="og:site_name" content="n0thing的个人博客">
-<meta property="og:description" content="CMD编译格式javac + 文件名+ 扩展名 eg : javac HelloWorld.java (编译)java + 类名(不加扩展名) eg : java HelloWorld (执行)  Java标识符及命名规则(见名知意)标识符组成 数字、字母、$、_ 注意 : Java关键字不可以作为标识符，(go to,const)为旧版本保留字段亦不可作为标识符使用。 包的命名 文件夹 单极 :">
+<meta property="og:description" content="一维数组定义格式:A:数据类型[] 数组名; B:数据类型 数组名[]; eg: A:int[] a;     B:int a[]; 推荐使用第一种. 初始化123456789101112int[] arr = new int[3];/*左边:	 int:说明数组中的元素的数据类型是int类型.	 []:说明这是一个数组.	 arr:是数组的名称.  右边:	 new:为数组分配内存空间.	 in">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-04T16:24:53.360Z">
+<meta property="og:image" content="https://n0thingjy.github.io/2018/12/06/数组/images/配图/数组内存分布.png">
+<meta property="og:image" content="https://n0thingjy.github.io/2018/12/06/数组/images/配图/数组赋值问题.png">
+<meta property="og:updated_time" content="2018-12-06T17:44:30.385Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java初学小问题">
-<meta name="twitter:description" content="CMD编译格式javac + 文件名+ 扩展名 eg : javac HelloWorld.java (编译)java + 类名(不加扩展名) eg : java HelloWorld (执行)  Java标识符及命名规则(见名知意)标识符组成 数字、字母、$、_ 注意 : Java关键字不可以作为标识符，(go to,const)为旧版本保留字段亦不可作为标识符使用。 包的命名 文件夹 单极 :">
+<meta name="twitter:title" content="数组">
+<meta name="twitter:description" content="一维数组定义格式:A:数据类型[] 数组名; B:数据类型 数组名[]; eg: A:int[] a;     B:int a[]; 推荐使用第一种. 初始化123456789101112int[] arr = new int[3];/*左边:	 int:说明数组中的元素的数据类型是int类型.	 []:说明这是一个数组.	 arr:是数组的名称.  右边:	 new:为数组分配内存空间.	 in">
+<meta name="twitter:image" content="https://n0thingjy.github.io/2018/12/06/数组/images/配图/数组内存分布.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://n0thingjy.github.io/2018/12/04/Java初学小问题/">
+  <link rel="canonical" href="https://n0thingjy.github.io/2018/12/06/数组/">
 
 
 
@@ -136,7 +139,7 @@
   };
 </script>
 
-  <title>Java初学小问题 | n0thing的个人博客</title>
+  <title>数组 | n0thing的个人博客</title>
   
 
 
@@ -352,7 +355,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://n0thingjy.github.io/2018/12/04/Java初学小问题/">
+    <link itemprop="mainEntityOfPage" href="https://n0thingjy.github.io/2018/12/06/数组/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="n0thing">
@@ -369,7 +372,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java初学小问题
+          <h1 class="post-title" itemprop="name headline">数组
               
             
           </h1>
@@ -394,7 +397,7 @@
                 
               
 
-              <time title="创建时间：2018-12-04 22:00:14" itemprop="dateCreated datePublished" datetime="2018-12-04T22:00:14+08:00">2018-12-04</time>
+              <time title="创建时间：2018-12-06 23:03:13" itemprop="dateCreated datePublished" datetime="2018-12-06T23:03:13+08:00">2018-12-06</time>
             
 
             
@@ -411,7 +414,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-12-05 00:24:53" itemprop="dateModified" datetime="2018-12-05T00:24:53+08:00">2018-12-05</time>
+                <time title="修改时间：2018-12-07 01:44:30" itemprop="dateModified" datetime="2018-12-07T01:44:30+08:00">2018-12-07</time>
               
             
           </span>
@@ -462,15 +465,31 @@
       
 
       
-        <h2 id="CMD编译格式"><a href="#CMD编译格式" class="headerlink" title="CMD编译格式"></a>CMD编译格式</h2><p>javac + 文件名+ 扩展名 eg : javac HelloWorld.java (编译)<br>java + 类名(不加扩展名) eg : java HelloWorld (执行)</p>
+        <h2 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h2><h3 id="定义格式"><a href="#定义格式" class="headerlink" title="定义格式:"></a>定义格式:</h3><pre><code>A:数据类型[] 数组名;
+B:数据类型 数组名[];
+eg: A:int[] a;
+    B:int a[];
+</code></pre><p>推荐使用第一种.</p>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">/*左边:</span></span><br><span class="line"><span class="comment">	 int:说明数组中的元素的数据类型是int类型.</span></span><br><span class="line"><span class="comment">	 []:说明这是一个数组.</span></span><br><span class="line"><span class="comment">	 arr:是数组的名称.</span></span><br><span class="line"><span class="comment">  右边:</span></span><br><span class="line"><span class="comment">	 new:为数组分配内存空间.</span></span><br><span class="line"><span class="comment">	 int:说明数组中的元素的数据类型是int类型.</span></span><br><span class="line"><span class="comment">	 []:说明这是一个数组.</span></span><br><span class="line"><span class="comment">	 3:数组长度,其实也就是数组中元素的个数.</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h3 id="获取数组元素"><a href="#获取数组元素" class="headerlink" title="获取数组元素"></a>获取数组元素</h3><p>数组名[索引]<br>索引就是每个元素的编号,从0开始,最大索引是数组的长度-1.</p>
+<h3 id="数组内存分配"><a href="#数组内存分配" class="headerlink" title="数组内存分配"></a>数组内存分配</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> [] arr = <span class="keyword">new</span> <span class="keyword">int</span> [<span class="number">3</span>];</span><br><span class="line">System.out.println(arr); <span class="comment">//地址值</span></span><br><span class="line">System.out.println(arr[<span class="number">0</span>]); <span class="comment">//0</span></span><br><span class="line">System.out.println(arr[<span class="number">1</span>]); <span class="comment">//0</span></span><br><span class="line">System.out.println(arr[<span class="number">2</span>]); <span class="comment">//0</span></span><br></pre></td></tr></table></figure>
+<p><img src="images/配图/数组内存分布.png" alt=""></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义第一个数组</span></span><br><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line">arr[<span class="number">0</span>] = <span class="number">88</span>; <span class="comment">//88</span></span><br><span class="line">arr[<span class="number">1</span>] = <span class="number">33</span>; <span class="comment">//33</span></span><br><span class="line">arr[<span class="number">2</span>] = <span class="number">66</span>; <span class="comment">//66</span></span><br><span class="line"><span class="comment">//定义第二个数组</span></span><br><span class="line"><span class="keyword">int</span>[] arr2 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line">arr[<span class="number">0</span>] = <span class="number">22</span>; <span class="comment">//22</span></span><br><span class="line">arr[<span class="number">1</span>] = <span class="number">44</span>; <span class="comment">//44</span></span><br><span class="line">arr[<span class="number">2</span>] = <span class="number">55</span>; <span class="comment">//55</span></span><br><span class="line"><span class="comment">//定义第三个数组</span></span><br><span class="line"><span class="keyword">int</span>[] arr3 = arr;</span><br><span class="line">arr3[<span class="number">0</span>] = <span class="number">100</span>;<span class="comment">//100</span></span><br><span class="line">arr3[<span class="number">1</span>] = <span class="number">200</span>;<span class="comment">//200</span></span><br><span class="line"><span class="comment">/*改变arr3的值也改变了arr的值,arr的地址值赋给了arr3</span></span><br><span class="line"><span class="comment">  栈内存的两个引用指向同一个堆内存空间.</span></span><br><span class="line"><span class="comment">  无论是它们谁的操作,都是针对同一个地方.</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<p><img src="images/配图/数组赋值问题.png" alt=""></p>
 <hr>
-<h2 id="Java标识符及命名规则-见名知意"><a href="#Java标识符及命名规则-见名知意" class="headerlink" title="Java标识符及命名规则(见名知意)"></a>Java标识符及命名规则(见名知意)</h2><h3 id="标识符组成"><a href="#标识符组成" class="headerlink" title="标识符组成"></a>标识符组成</h3><p> 数字、字母、$、_<br> 注意 : Java关键字不可以作为标识符，(go to,const)为旧版本保留字段亦不可作为标识符使用。</p>
-<h3 id="包的命名"><a href="#包的命名" class="headerlink" title="包的命名"></a>包的命名</h3><p> 文件夹 单极 : xxx<br>        多级 : xxx.xxx.xxx<br> (全部字母小写)</p>
-<h3 id="类或接口"><a href="#类或接口" class="headerlink" title="类或接口"></a>类或接口</h3><p> 一个单词 : 单词的首字母必须大写 eg : Student,Dog<br> 多个单词 : 每个单词的首字母必须大写 eg : HelloWorld,StudentName</p>
-<h3 id="方法或变量"><a href="#方法或变量" class="headerlink" title="方法或变量"></a>方法或变量</h3><p> 一个单词 : 单词的首字母小写 eg : age,student<br> 多个单词 : 首字母小写,从第二个字母开始首字母大写 eg : studentAge,studentAllNames</p>
-<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p> 一个单词 : 全部大写 eg : PI<br> 多个单词 : 每个字母都大写,用_隔开 eg : STUDENT_MAX_AGE</p>
-<hr>
-
+<h2 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h2><h3 id="定义格式-标准"><a href="#定义格式-标准" class="headerlink" title="定义格式(标准):"></a>定义格式(标准):</h3><pre><code>数据类型[ ][ ] 数组名 = new 数据类型[m][n];
+m表示这个二维数组有多少个一维数组.
+n表示每一个一维数组的元素个数.
+</code></pre><h3 id="其他格式"><a href="#其他格式" class="headerlink" title="其他格式:"></a>其他格式:</h3><pre><code>a:数据类型 数组名[ ][ ] = new 数据类型[m][n];
+b:数据类型[ ] 数组名[ ] = new 数据类型[m][n];
+c:数据类型[ ][ ] 数组名 = new 数据类型[m][n];(标准)
+d:数据类型[ ][ ] 数组名 = new 数据类型[m][ ];(一维数组元素个数可以动态给出)
+e:数据类型[ ][ ] 数组名 = new 数据类型[ ][ ]{{元素...},{元素...},{元素...}};(直接赋值)
+f:数据类型[ ][ ] 数组名 = {{元素...},{元素...},{元素...}};(e的简化版)
+</code></pre><hr>
+<h2 id="传递值问题"><a href="#传递值问题" class="headerlink" title="传递值问题"></a>传递值问题</h2><pre><code>基本类型传递值   ---&gt;   值(不改变方法中调用的值)
+引用类型传递值   ---&gt;   地址值(改变方法中调用的值)
+</code></pre>
       
     </div>
 
@@ -506,8 +525,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/04/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/12/06/内存/" rel="next" title="内存">
+                <i class="fa fa-chevron-left"></i> 内存
               </a>
             
           </div>
@@ -516,8 +535,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/12/05/二进制/" rel="prev" title="二进制、原码、反码、补码问题">
-                二进制、原码、反码、补码问题 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/12/06/面向对象/" rel="prev" title="面向对象">
+                面向对象 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -653,7 +672,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CMD编译格式"><span class="nav-number">1.</span> <span class="nav-text">CMD编译格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java标识符及命名规则-见名知意"><span class="nav-number">2.</span> <span class="nav-text">Java标识符及命名规则(见名知意)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标识符组成"><span class="nav-number">2.1.</span> <span class="nav-text">标识符组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#包的命名"><span class="nav-number">2.2.</span> <span class="nav-text">包的命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类或接口"><span class="nav-number">2.3.</span> <span class="nav-text">类或接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法或变量"><span class="nav-number">2.4.</span> <span class="nav-text">方法或变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常量"><span class="nav-number">2.5.</span> <span class="nav-text">常量</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一维数组"><span class="nav-number">1.</span> <span class="nav-text">一维数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义格式"><span class="nav-number">1.1.</span> <span class="nav-text">定义格式:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化"><span class="nav-number">1.2.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取数组元素"><span class="nav-number">1.3.</span> <span class="nav-text">获取数组元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组内存分配"><span class="nav-number">1.4.</span> <span class="nav-text">数组内存分配</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二维数组"><span class="nav-number">2.</span> <span class="nav-text">二维数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义格式-标准"><span class="nav-number">2.1.</span> <span class="nav-text">定义格式(标准):</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他格式"><span class="nav-number">2.2.</span> <span class="nav-text">其他格式:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#传递值问题"><span class="nav-number">3.</span> <span class="nav-text">传递值问题</span></a></li></ol></div>
             
 
           </div>
