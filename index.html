@@ -393,12 +393,24 @@
                 
               
 
-              <time title="创建时间：2018-12-06 23:03:21 / 修改时间：23:03:41" itemprop="dateCreated datePublished" datetime="2018-12-06T23:03:21+08:00">2018-12-06</time>
+              <time title="创建时间：2018-12-06 23:03:21" itemprop="dateCreated datePublished" datetime="2018-12-06T23:03:21+08:00">2018-12-06</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-13 16:25:43" itemprop="dateModified" datetime="2018-12-13T16:25:43+08:00">2018-12-13</time>
               
             
           </span>
@@ -451,7 +463,143 @@
       
         
           
-            
+            <h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h3 id="面向对象思想"><a href="#面向对象思想" class="headerlink" title="面向对象思想"></a>面向对象思想</h3><p>面向对象是基于面向过程<br>面向过程:强调的是每一个功能的步骤.<br>面向对象:强调的是对象,然后由对象去调用功能(强调结果).</p>
+<h3 id="面向对象特点"><a href="#面向对象特点" class="headerlink" title="面向对象特点"></a>面向对象特点</h3><p>A:是一种更符合我们思想习惯的思想.<br>B:可以将复杂的事情简单化.<br>C:将我们以执行者变成指挥者.<br>eg:自己去打水变成让别人去打水.</p>
+<h3 id="举例买电脑"><a href="#举例买电脑" class="headerlink" title="举例买电脑"></a>举例买电脑</h3><p>面向过程:了解电脑 -&gt; 了解自己的需求 -&gt; 找对应的参数信息 -&gt; 去买电脑 -&gt; 讨价还价 -&gt; 买回电脑<br>面向对象:要买电脑 -&gt; <strong>找人去给我买</strong> -&gt; 买回来了</p>
+<h3 id="举例把大象装进冰箱"><a href="#举例把大象装进冰箱" class="headerlink" title="举例把大象装进冰箱"></a>举例把大象装进冰箱</h3><h4 id="面向过程"><a href="#面向过程" class="headerlink" title="面向过程:"></a>面向过程:</h4><p>动作步骤:1.打开冰箱门 2.装进大象 3.关闭冰箱门<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		open();</span><br><span class="line">		in();</span><br><span class="line">		close();</span><br><span class="line">&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">open</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"打开冰箱门"</span>);</span><br><span class="line">&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">in</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"装进大象"</span>);</span><br><span class="line">&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"关闭冰箱门"</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="面向对象-1"><a href="#面向对象-1" class="headerlink" title="面向对象:"></a>面向对象:</h4><p>我们怎么才能更符合面向对象思想呢?<br>A:有哪些类?<br>B:每个类有哪些东西?<br>C:类与类直接的关系是什么?</p>
+<p>把大象装进冰箱的分析?(如何分析有哪些类呢?UML.名词提取法.)<br>A:有哪些类呢? 大象,冰箱,Demo.<br>B:每个类有哪些东西呢? 大象:进去 , 冰箱:开门,关门 , Demo:main方法.<br>C:类与类直接的关系是什么呢? Demo中使用大象和冰箱类的功能.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Daxiang</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">in</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"装进大象"</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bingxiang</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">open</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"打开冰箱门"</span>);</span><br><span class="line">&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"关闭冰箱门"</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		Daxiang dx = <span class="keyword">new</span> Daxiang();</span><br><span class="line">		Bingxiang bx = <span class="keyword">new</span> Bingxiang();</span><br><span class="line">		bx.open();</span><br><span class="line">		dx.in();</span><br><span class="line">		bx.close();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="面向对象开发、设计及特征"><a href="#面向对象开发、设计及特征" class="headerlink" title="面向对象开发、设计及特征"></a>面向对象开发、设计及特征</h3><p>开发:不断的创建对象,使用对象,指挥对象做事情.<br>设计:管理和维护对象之间的关系.<br>特征:<strong>封装</strong>(encapsulation),<strong>继承</strong>(inheritance),<strong>多态</strong>(polymorphism).</p>
+<h3 id="类的定义和概述"><a href="#类的定义和概述" class="headerlink" title="类的定义和概述"></a>类的定义和概述</h3><p>事物:</p>
+<pre><code>属性:事物的信息描述
+行为:事物的功能
+</code></pre><p>类:</p>
+<pre><code>成员变量:事物的属性
+成员方法:事物的行为
+</code></pre><p>类:是一组相关的属性和行为的集合,是一个抽象的概念.<br>对象:是该类事物的具体表现形式.具体存在的个体.<br>定义一个类,其实就是定义该类的成员变量和成员方法.</p>
+<h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><pre><code>创建对象格式:类名 对象名 = new 类名();
+</code></pre><p>使用成员变量:</p>
+<pre><code>对象名.变量名;
+</code></pre><p>使用成员方法:</p>
+<pre><code>对象名.方法名(...); 
+</code></pre><h3 id="成员变量和局部变量的区别"><a href="#成员变量和局部变量的区别" class="headerlink" title="成员变量和局部变量的区别"></a>成员变量和局部变量的区别</h3><h4 id="在类中的位置不同"><a href="#在类中的位置不同" class="headerlink" title="在类中的位置不同"></a>在类中的位置不同</h4><p>成员变量:在类中方法外.<br>局部变量:在方法定义中或者方法声明上.</p>
+<h4 id="在内存中的位置不同"><a href="#在内存中的位置不同" class="headerlink" title="在内存中的位置不同"></a>在内存中的位置不同</h4><p>成员变量:在堆内存中.<br>局部变量:在栈内存中.</p>
+<h4 id="生命周期不同"><a href="#生命周期不同" class="headerlink" title="生命周期不同"></a>生命周期不同</h4><p>成员变量:随着对象的创建而存在随着对象的消失而消失.<br>局部变量:随着方法的调用而存在,随着方法调用完毕而消失.</p>
+<h4 id="初始化值不同"><a href="#初始化值不同" class="headerlink" title="初始化值不同"></a>初始化值不同</h4><p>成员变量:有默认初始化值.<br>局部变量:没有默认初始化值,必须定义赋值才能使用.</p>
+<p>注:局部变量名称可以和成员变量名称一样,在方法中使用的时候,采用就近原则.</p>
+<h3 id="创建对象内存图"><a href="#创建对象内存图" class="headerlink" title="创建对象内存图"></a>创建对象内存图</h3><p>创建一个对象内存图<br><img src="/2018/12/06/面向对象/创建一个对象内存图.png" alt=""><br>创建两个对象内存图<br><img src="/2018/12/06/面向对象/创建两个对象内存图.png" alt=""><br>创建三个对象内存图<br><img src="/2018/12/06/面向对象/创建三个对象内存图.png" alt=""></p>
+<h3 id="形式参数"><a href="#形式参数" class="headerlink" title="形式参数"></a>形式参数</h3><p>基本类型:形式参数的改变不影响实际参数.<br>引用类型:形式参数的改变直接影响实际参数.</p>
+<p>类是一个引用类型<br>如果看到一个方法的形式参数是一个类类型(引用类型),这里需要的是该类的对象对象.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//形式参数是基本类型例子</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> a + b;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//形式参数是引用类型</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"我爱学习"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StudentDemo</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">(Student s)</span></span>&#123;<span class="comment">//调用的时候,把main方法中的s的地址值传递到了这里 Stduent s = new Student();</span></span><br><span class="line">		s.show();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ArgsTest</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		<span class="comment">//形式参数是基本类型的调用</span></span><br><span class="line">		Demo d = <span class="keyword">new</span> Demo();</span><br><span class="line">		<span class="keyword">int</span> result = d.sum(<span class="number">10</span>,<span class="number">20</span>);</span><br><span class="line">		System.out.println(<span class="string">"result:"</span> + result);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//形式参数是引用类型的调用</span></span><br><span class="line">		<span class="comment">//需求:要调用StudentDemo类中的method()方法</span></span><br><span class="line">		StudentDemo sd = <span class="keyword">new</span> StudentDemo();</span><br><span class="line">		<span class="comment">//创建学生对象</span></span><br><span class="line">		Stduent s = <span class="keyword">new</span> Student();</span><br><span class="line">		sd.method(s);<span class="comment">//把s的地址给到了这里</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="匿名对象"><a href="#匿名对象" class="headerlink" title="匿名对象"></a>匿名对象</h3><p>匿名对象:就是没有名字的对象.<br>匿名对象的应用场景:</p>
+<pre><code>A:调用方法,仅仅只调用一次的时候.
+注意:多次的时候,不适合.
+好处:匿名对象调用完毕就是垃圾,可以被垃圾回收器回收.
+B:匿名对象可以作为实际参数传递.
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"我爱学习"</span>).</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StudentDemo</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">(Student s)</span></span>&#123;</span><br><span class="line">		s.show();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NoNameDemo</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		<span class="comment">//带名字的调用</span></span><br><span class="line">		Student s = <span class="keyword">new</span> Student();</span><br><span class="line">		s.show();</span><br><span class="line"></span><br><span class="line">		<span class="comment">//匿名对象</span></span><br><span class="line">		<span class="comment">//new Student();</span></span><br><span class="line">		<span class="comment">//匿名对象调用方法</span></span><br><span class="line">		<span class="keyword">new</span> Student().show();<span class="comment">//这里其实是创建了一个新的对象</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">//匿名对象作为实际参数传递</span></span><br><span class="line">		StudentDemo sd = <span class="keyword">new</span> StudentDemo();</span><br><span class="line">		<span class="comment">//带名字的调用</span></span><br><span class="line">		Student ss = <span class="keyword">new</span> Student();</span><br><span class="line">		sd.method(ss);<span class="comment">//这里的s是一个实际参数.</span></span><br><span class="line">		<span class="comment">//匿名对象</span></span><br><span class="line">		sd.method(<span class="keyword">new</span> Student());</span><br><span class="line">		<span class="comment">//全部匿名对象</span></span><br><span class="line">		<span class="keyword">new</span> StudentDemo().method(<span class="keyword">new</span> Student());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>封装:</p>
+<pre><code>隐藏对象的属性和实现细节,仅对外提供公共访问方式.
+</code></pre><p>好处:</p>
+<pre><code>隐藏实现细节,提供公共的访问方式.
+提高了代码的复用性
+提高了安全性
+</code></pre><p>封装原则:</p>
+<pre><code>将不需要对外提供的内容都隐藏起来.
+把属性隐藏,提供公共方法对其访问.
+</code></pre><p><strong>private</strong>关键字:</p>
+<pre><code>是一个权限修饰符.
+可以修饰成员变量和成员方法.
+被private修饰的成员只能在本类中访问.
+</code></pre><p>常见应用:</p>
+<pre><code>把成员变量用private修饰,提供对应的getXxx()/setXxx()方法.
+</code></pre><p><strong>this</strong>:</p>
+<pre><code>是当前类的对象引用.简单记,它就代表当前类的一个对象.
+注意:对象调用哪个方法,this就代表谁
+</code></pre><p>this的场景:</p>
+<pre><code>解决局部变量隐藏成员变量.
+</code></pre><p>内存图解:<br><img src="/2018/12/06/面向对象/this关键字的内存图解.png" alt=""></p>
+<h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><p>构造方法:给对象的数据进行初始化<br>格式:</p>
+<pre><code>A:方法名与类名相同
+B:没有返回值类型,连void都没有
+C:没有具体的返回值
+</code></pre><p>注意事项:</p>
+<pre><code>A:如果没有给出构造方法,系统将会自动提供一个无参构造方法.
+B:如果给出了任意构造方法,系统将不再提供默认的无参构造方法,如果还想使用无参构造方法,就必须自己给出.建议永远自己给出无参构造方法.
+</code></pre><p>给成员变量赋值的两种方法:<br>A:setXxx()<br>B:构造方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"这是构造方法"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConstructDemo</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		<span class="comment">//创建对象</span></span><br><span class="line">		Student s = <span class="keyword">new</span> Student();</span><br><span class="line">		System.out.println(s);<span class="comment">//会输出地址值</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="类的组成"><a href="#类的组成" class="headerlink" title="类的组成"></a>类的组成</h3><p>类的组成:</p>
+<pre><code>成员变量
+
+成员方法
+1.无参构造方法
+2.带参构造方法
+
+构造方法
+getXxx()
+setXxx()
+</code></pre><p>给成员变量赋值的方式</p>
+<pre><code>无参构造方法+setXxx()
+带参构造方法
+</code></pre><p>变量什么时候定义为成员变量?:</p>
+<pre><code>如果这个变量是用来描述这个类的信息的,那么该变量就应该定义为成员变量.
+</code></pre><p>变量定义在哪里好?:</p>
+<pre><code>变量的范围是越小越好,因为能及时的被回收.
+</code></pre><p>根据返回值分类:</p>
+<pre><code>void类型
+非void类型
+</code></pre><p>根据形式参数分类:</p>
+<pre><code>空参方法
+非空参方法
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getString</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"helloworld"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"show"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">		System.out.println(name);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">function</span><span class="params">(String s1,String s2)</span></span>&#123;</span><br><span class="line">		retrun s1 + s2;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StudentDemo</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		<span class="comment">//创建对象</span></span><br><span class="line">		Student s = <span class="keyword">new</span> Student();</span><br><span class="line">		<span class="comment">//调用无参无返回值方法</span></span><br><span class="line">		s.show();</span><br><span class="line">		<span class="comment">//调用无参有返回值方法</span></span><br><span class="line">		String result = s.getString();</span><br><span class="line">		System.out.println(result);</span><br><span class="line">		<span class="comment">//调用带参无返回值的方法</span></span><br><span class="line">		s.method(<span class="string">"Fatih"</span>);</span><br><span class="line">		<span class="comment">//调用带参带返回值的方法</span></span><br><span class="line">		String result2 = s.function(<span class="string">"hello"</span>,<span class="string">"world"</span>);</span><br><span class="line">		System.out.println(result2);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="创建对象内存图-1"><a href="#创建对象内存图-1" class="headerlink" title="创建对象内存图"></a>创建对象内存图</h3><p><img src="/2018/12/06/面向对象/创建对象.png" alt=""></p>
+<h3 id="static关键字"><a href="#static关键字" class="headerlink" title="static关键字"></a>static关键字</h3><h4 id="static关键字特点"><a href="#static关键字特点" class="headerlink" title="static关键字特点:"></a>static关键字特点:</h4><pre><code>A:随着类的加载而加载. eg:main方法
+B:优先于对象存在.
+C:被类的所有对象共享:
+如果某个成员变量是被所有对象共享的,那么它就应该定义为静态的.
+eg:饮水机(用静态修饰),水杯(不能用静态修饰)
+D:可以通过类名调用(本身也可以通过对象名调用)
+推荐使用类名调用
+</code></pre><p>静态修饰的内容一般称其为:与类相关的,类成员.</p>
+<p>static的内存图解:<br><img src="/2018/12/06/面向对象/static的内存图解.png" alt=""></p>
+<h4 id="static关键字注意事项"><a href="#static关键字注意事项" class="headerlink" title="static关键字注意事项"></a>static关键字注意事项</h4><pre><code>A:在静态方法中是没有this关键字的
+理解:静态是随着类的加载而加载,this是随着对象的创建而存在的.静态比对象先存在.
+
+B:静态方法只能访问静态的成员变量和静态的成员方法.
+
+静态方法:
+成员变量:只能访问静态变量.
+成员方法:只能访问静态成员方法.
+
+非静态方法:
+成员变量:可以是静态的,也可以是非静态的.
+成员方法:可以是静态的成员方法,也可以是非静态的成员方法.
+
+简单记:静态只能访问静态
+</code></pre><h4 id="静态变量和成员变量"><a href="#静态变量和成员变量" class="headerlink" title="静态变量和成员变量"></a>静态变量和成员变量</h4><p>所属不同</p>
+<pre><code>静态变量属于类,所以也成为类变量.
+成员变量属于对象,所以也成为实例变量(对象变量).
+</code></pre><p>内存中位置不同</p>
+<pre><code>静态变量存储于方法区的静态区.
+成员变量存储于堆内存.
+</code></pre><p>内存出现时间不同</p>
+<pre><code>静态变量随着类的加载而加载,随着类的消失而消失.
+成员变量随着对象的创建而存在,随着对象的消失而消失.
+</code></pre><p>调用不同</p>
+<pre><code>静态变量可以通过类名调用,也可以通过对象调用.
+成员变量只能通过对象名调用.
+</code></pre><h4 id="main方法格式详解"><a href="#main方法格式详解" class="headerlink" title="main方法格式详解"></a>main方法格式详解</h4><pre><code>public static void main (String[] args){...}
+
+public:公共的,访问权限是最大的.由于main方法是被jvm调用,所以权限要够大.
+
+static:静态的,不需要创建对象,通过类名就可以.方便jvm的调用.
+
+void:方法的返回值是返回给调用者,而main方法是被jvm调用.而返回给jvm没有意义.
+
+main:是一个常见的方法入口.几乎所有语言都是以main作为入口.
+
+String[] args:这是一个字符串数组.(早期是为了接收键盘录入的数据的)
+格式是:java 类名 xxx xxx xxx
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainDemo</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		System.out.println(args);<span class="comment">//[Ljava.lang.String;@175078b输出一个地址值</span></span><br><span class="line">		System.out.println(args.length);<span class="comment">//0</span></span><br><span class="line">		System.out.println(args[<span class="number">0</span>]);<span class="comment">//ArrayIndexOutOfBoundsException(越界)</span></span><br><span class="line"></span><br><span class="line">		cmd键入 java MainDemo hello world java</span><br><span class="line">		System.out.println(args);<span class="comment">//[Ljava.lang.String;@175078b输出一个地址值</span></span><br><span class="line">		System.out.println(args.length);<span class="comment">//3</span></span><br><span class="line">		System.out.println(args[<span class="number">0</span>]);<span class="comment">//hello</span></span><br><span class="line">		System.out.println(args[<span class="number">1</span>]);<span class="comment">//world</span></span><br><span class="line">		System.out.println(args[<span class="number">2</span>]);<span class="comment">//java</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           
         
       
