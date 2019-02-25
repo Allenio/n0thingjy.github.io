@@ -1,961 +1,602 @@
 <!DOCTYPE html>
+<html lang="zh-CN">
+    <!-- title -->
 
 
 
 
+<!-- keywords -->
 
 
 
 
-
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '6.6.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="n0thing">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="n0thing">
+    
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content="">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>n0thing&#39;s blog</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
     }
-  };
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
 </script>
 
-
-  
-
-
-
-
-  <meta property="og:type" content="website">
-<meta property="og:title" content="n0thing的个人博客">
-<meta property="og:url" content="https://n0thingjy.github.io/index.html">
-<meta property="og:site_name" content="n0thing的个人博客">
-<meta property="og:locale" content="zh-CN">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="n0thing的个人博客">
-
-
-
-
-
-
-  <link rel="canonical" href="https://n0thingjy.github.io/">
-
-
-
-<script type="text/javascript" id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
-
-  <title>n0thing的个人博客</title>
-  
-
-
-
-
-
-
-
-
-
-
-
-  <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
-
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
-
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
-  </style>
-</noscript>
-
+    <link rel="icon" href="/assets/i3.ico">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin="">
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin="">
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
     
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+        <body class="home-body">
     
+    
+<header class="header index-header">
 
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">n0thing的个人博客</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <a class="home-link" href="/">n0thing's blog</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 文章页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            n0thing's blog
+            <!-- 文章页  -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+                When my career is over, I'm gonna look in the mirror and say I did it my way.
+            
+            <!-- 文章页  -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
     </div>
-    
-  </div>
-
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
 </div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
 
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
 
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
 
-<nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home menu-item-active">
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
 
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main index-page">
     
     
     
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
     
     
     
-      
+    <article class="index-post">
+        <a class="abstract-title" href="/2018/12/09/抽象类/">
+            
+                <span>抽象类</span>
+        </a>
+        <div class="abstract-content">
+            抽象类概括在Java中，一个没有方法体的方法应该定义为抽象方法，而类中如果有抽象方法，该类必须定义为抽象类。
+抽象类的特点1.抽象类和抽象方法必须用abstract关键字修饰
+
+格式
+abstract class 类名{}
+public abstract void eat();
+
+2.抽象类不一定有抽象方法，但有抽象方法的类一定是抽象类
+3.抽象类不能实例化
+
+抽象类如何实例化?
+按照多态的方法，由具体的子类实例化。其实这也是多态的一种，抽象类多态。抽象类有构造方法，但是不能实例化。抽象类中构造方法的作用是用于子类访问父类数据的初始化。
+
+4.抽象类的子类
+
+如果不想重写抽象方法，该子类...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/09</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
     
-
+        <a class="post-tag" href="javascript:void(0);" data-tags="Java学习总结">Java学习总结</a>
     
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
-
+        <a class="post-tag" href="javascript:void(0);" data-tags="面向对象">面向对象</a>
     
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
-
-  </li>
-
-      
-      
-    </ul>
-  
-
-  
-
-  
-</nav>
-
-
-
-  
-
-
-
 </div>
-    </header>
-
-    
-
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
             
-
-          
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://n0thingjy.github.io/2018/12/06/面向对象/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="n0thing">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="n0thing的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/06/面向对象/" class="post-title-link" itemprop="https://n0thingjy.github.io/index.html">面向对象</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-06 23:03:21" itemprop="dateCreated datePublished" datetime="2018-12-06T23:03:21+08:00">2018-12-06</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-13 16:25:43" itemprop="dateModified" datetime="2018-12-13T16:25:43+08:00">2018-12-13</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
+    </article>
     
     
     
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h3 id="面向对象思想"><a href="#面向对象思想" class="headerlink" title="面向对象思想"></a>面向对象思想</h3><p>面向对象是基于面向过程<br>面向过程:强调的是每一个功能的步骤.<br>面向对象:强调的是对象,然后由对象去调用功能(强调结果).</p>
-<h3 id="面向对象特点"><a href="#面向对象特点" class="headerlink" title="面向对象特点"></a>面向对象特点</h3><p>A:是一种更符合我们思想习惯的思想.<br>B:可以将复杂的事情简单化.<br>C:将我们以执行者变成指挥者.<br>eg:自己去打水变成让别人去打水.</p>
-<h3 id="举例买电脑"><a href="#举例买电脑" class="headerlink" title="举例买电脑"></a>举例买电脑</h3><p>面向过程:了解电脑 -&gt; 了解自己的需求 -&gt; 找对应的参数信息 -&gt; 去买电脑 -&gt; 讨价还价 -&gt; 买回电脑<br>面向对象:要买电脑 -&gt; <strong>找人去给我买</strong> -&gt; 买回来了</p>
-<h3 id="举例把大象装进冰箱"><a href="#举例把大象装进冰箱" class="headerlink" title="举例把大象装进冰箱"></a>举例把大象装进冰箱</h3><h4 id="面向过程"><a href="#面向过程" class="headerlink" title="面向过程:"></a>面向过程:</h4><p>动作步骤:1.打开冰箱门 2.装进大象 3.关闭冰箱门<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		open();</span><br><span class="line">		in();</span><br><span class="line">		close();</span><br><span class="line">&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">open</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"打开冰箱门"</span>);</span><br><span class="line">&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">in</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"装进大象"</span>);</span><br><span class="line">&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"关闭冰箱门"</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="面向对象-1"><a href="#面向对象-1" class="headerlink" title="面向对象:"></a>面向对象:</h4><p>我们怎么才能更符合面向对象思想呢?<br>A:有哪些类?<br>B:每个类有哪些东西?<br>C:类与类直接的关系是什么?</p>
-<p>把大象装进冰箱的分析?(如何分析有哪些类呢?UML.名词提取法.)<br>A:有哪些类呢? 大象,冰箱,Demo.<br>B:每个类有哪些东西呢? 大象:进去 , 冰箱:开门,关门 , Demo:main方法.<br>C:类与类直接的关系是什么呢? Demo中使用大象和冰箱类的功能.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Daxiang</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">in</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"装进大象"</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bingxiang</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">open</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"打开冰箱门"</span>);</span><br><span class="line">&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"关闭冰箱门"</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		Daxiang dx = <span class="keyword">new</span> Daxiang();</span><br><span class="line">		Bingxiang bx = <span class="keyword">new</span> Bingxiang();</span><br><span class="line">		bx.open();</span><br><span class="line">		dx.in();</span><br><span class="line">		bx.close();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="面向对象开发、设计及特征"><a href="#面向对象开发、设计及特征" class="headerlink" title="面向对象开发、设计及特征"></a>面向对象开发、设计及特征</h3><p>开发:不断的创建对象,使用对象,指挥对象做事情.<br>设计:管理和维护对象之间的关系.<br>特征:<strong>封装</strong>(encapsulation),<strong>继承</strong>(inheritance),<strong>多态</strong>(polymorphism).</p>
-<h3 id="类的定义和概述"><a href="#类的定义和概述" class="headerlink" title="类的定义和概述"></a>类的定义和概述</h3><p>事物:</p>
-<pre><code>属性:事物的信息描述
-行为:事物的功能
-</code></pre><p>类:</p>
-<pre><code>成员变量:事物的属性
-成员方法:事物的行为
-</code></pre><p>类:是一组相关的属性和行为的集合,是一个抽象的概念.<br>对象:是该类事物的具体表现形式.具体存在的个体.<br>定义一个类,其实就是定义该类的成员变量和成员方法.</p>
-<h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><pre><code>创建对象格式:类名 对象名 = new 类名();
-</code></pre><p>使用成员变量:</p>
-<pre><code>对象名.变量名;
-</code></pre><p>使用成员方法:</p>
-<pre><code>对象名.方法名(...); 
-</code></pre><h3 id="成员变量和局部变量的区别"><a href="#成员变量和局部变量的区别" class="headerlink" title="成员变量和局部变量的区别"></a>成员变量和局部变量的区别</h3><h4 id="在类中的位置不同"><a href="#在类中的位置不同" class="headerlink" title="在类中的位置不同"></a>在类中的位置不同</h4><p>成员变量:在类中方法外.<br>局部变量:在方法定义中或者方法声明上.</p>
-<h4 id="在内存中的位置不同"><a href="#在内存中的位置不同" class="headerlink" title="在内存中的位置不同"></a>在内存中的位置不同</h4><p>成员变量:在堆内存中.<br>局部变量:在栈内存中.</p>
-<h4 id="生命周期不同"><a href="#生命周期不同" class="headerlink" title="生命周期不同"></a>生命周期不同</h4><p>成员变量:随着对象的创建而存在随着对象的消失而消失.<br>局部变量:随着方法的调用而存在,随着方法调用完毕而消失.</p>
-<h4 id="初始化值不同"><a href="#初始化值不同" class="headerlink" title="初始化值不同"></a>初始化值不同</h4><p>成员变量:有默认初始化值.<br>局部变量:没有默认初始化值,必须定义赋值才能使用.</p>
-<p>注:局部变量名称可以和成员变量名称一样,在方法中使用的时候,采用就近原则.</p>
-<h3 id="创建对象内存图"><a href="#创建对象内存图" class="headerlink" title="创建对象内存图"></a>创建对象内存图</h3><p>创建一个对象内存图<br><img src="/2018/12/06/面向对象/创建一个对象内存图.png" alt=""><br>创建两个对象内存图<br><img src="/2018/12/06/面向对象/创建两个对象内存图.png" alt=""><br>创建三个对象内存图<br><img src="/2018/12/06/面向对象/创建三个对象内存图.png" alt=""></p>
-<h3 id="形式参数"><a href="#形式参数" class="headerlink" title="形式参数"></a>形式参数</h3><p>基本类型:形式参数的改变不影响实际参数.<br>引用类型:形式参数的改变直接影响实际参数.</p>
-<p>类是一个引用类型<br>如果看到一个方法的形式参数是一个类类型(引用类型),这里需要的是该类的对象对象.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//形式参数是基本类型例子</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> a + b;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//形式参数是引用类型</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"我爱学习"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StudentDemo</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">(Student s)</span></span>&#123;<span class="comment">//调用的时候,把main方法中的s的地址值传递到了这里 Stduent s = new Student();</span></span><br><span class="line">		s.show();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ArgsTest</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		<span class="comment">//形式参数是基本类型的调用</span></span><br><span class="line">		Demo d = <span class="keyword">new</span> Demo();</span><br><span class="line">		<span class="keyword">int</span> result = d.sum(<span class="number">10</span>,<span class="number">20</span>);</span><br><span class="line">		System.out.println(<span class="string">"result:"</span> + result);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//形式参数是引用类型的调用</span></span><br><span class="line">		<span class="comment">//需求:要调用StudentDemo类中的method()方法</span></span><br><span class="line">		StudentDemo sd = <span class="keyword">new</span> StudentDemo();</span><br><span class="line">		<span class="comment">//创建学生对象</span></span><br><span class="line">		Stduent s = <span class="keyword">new</span> Student();</span><br><span class="line">		sd.method(s);<span class="comment">//把s的地址给到了这里</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="匿名对象"><a href="#匿名对象" class="headerlink" title="匿名对象"></a>匿名对象</h3><p>匿名对象:就是没有名字的对象.<br>匿名对象的应用场景:</p>
-<pre><code>A:调用方法,仅仅只调用一次的时候.
-注意:多次的时候,不适合.
-好处:匿名对象调用完毕就是垃圾,可以被垃圾回收器回收.
-B:匿名对象可以作为实际参数传递.
-</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"我爱学习"</span>).</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StudentDemo</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">(Student s)</span></span>&#123;</span><br><span class="line">		s.show();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NoNameDemo</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		<span class="comment">//带名字的调用</span></span><br><span class="line">		Student s = <span class="keyword">new</span> Student();</span><br><span class="line">		s.show();</span><br><span class="line"></span><br><span class="line">		<span class="comment">//匿名对象</span></span><br><span class="line">		<span class="comment">//new Student();</span></span><br><span class="line">		<span class="comment">//匿名对象调用方法</span></span><br><span class="line">		<span class="keyword">new</span> Student().show();<span class="comment">//这里其实是创建了一个新的对象</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">//匿名对象作为实际参数传递</span></span><br><span class="line">		StudentDemo sd = <span class="keyword">new</span> StudentDemo();</span><br><span class="line">		<span class="comment">//带名字的调用</span></span><br><span class="line">		Student ss = <span class="keyword">new</span> Student();</span><br><span class="line">		sd.method(ss);<span class="comment">//这里的s是一个实际参数.</span></span><br><span class="line">		<span class="comment">//匿名对象</span></span><br><span class="line">		sd.method(<span class="keyword">new</span> Student());</span><br><span class="line">		<span class="comment">//全部匿名对象</span></span><br><span class="line">		<span class="keyword">new</span> StudentDemo().method(<span class="keyword">new</span> Student());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>封装:</p>
-<pre><code>隐藏对象的属性和实现细节,仅对外提供公共访问方式.
-</code></pre><p>好处:</p>
-<pre><code>隐藏实现细节,提供公共的访问方式.
-提高了代码的复用性
-提高了安全性
-</code></pre><p>封装原则:</p>
-<pre><code>将不需要对外提供的内容都隐藏起来.
-把属性隐藏,提供公共方法对其访问.
-</code></pre><p><strong>private</strong>关键字:</p>
-<pre><code>是一个权限修饰符.
-可以修饰成员变量和成员方法.
-被private修饰的成员只能在本类中访问.
-</code></pre><p>常见应用:</p>
-<pre><code>把成员变量用private修饰,提供对应的getXxx()/setXxx()方法.
-</code></pre><p><strong>this</strong>:</p>
-<pre><code>是当前类的对象引用.简单记,它就代表当前类的一个对象.
-注意:对象调用哪个方法,this就代表谁
-</code></pre><p>this的场景:</p>
-<pre><code>解决局部变量隐藏成员变量.
-</code></pre><p>内存图解:<br><img src="/2018/12/06/面向对象/this关键字的内存图解.png" alt=""></p>
-<h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><p>构造方法:给对象的数据进行初始化<br>格式:</p>
-<pre><code>A:方法名与类名相同
-B:没有返回值类型,连void都没有
-C:没有具体的返回值
-</code></pre><p>注意事项:</p>
-<pre><code>A:如果没有给出构造方法,系统将会自动提供一个无参构造方法.
-B:如果给出了任意构造方法,系统将不再提供默认的无参构造方法,如果还想使用无参构造方法,就必须自己给出.建议永远自己给出无参构造方法.
-</code></pre><p>给成员变量赋值的两种方法:<br>A:setXxx()<br>B:构造方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"这是构造方法"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConstructDemo</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		<span class="comment">//创建对象</span></span><br><span class="line">		Student s = <span class="keyword">new</span> Student();</span><br><span class="line">		System.out.println(s);<span class="comment">//会输出地址值</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="类的组成"><a href="#类的组成" class="headerlink" title="类的组成"></a>类的组成</h3><p>类的组成:</p>
-<pre><code>成员变量
-
-成员方法
-1.无参构造方法
-2.带参构造方法
-
-构造方法
-getXxx()
-setXxx()
-</code></pre><p>给成员变量赋值的方式</p>
-<pre><code>无参构造方法+setXxx()
-带参构造方法
-</code></pre><p>变量什么时候定义为成员变量?:</p>
-<pre><code>如果这个变量是用来描述这个类的信息的,那么该变量就应该定义为成员变量.
-</code></pre><p>变量定义在哪里好?:</p>
-<pre><code>变量的范围是越小越好,因为能及时的被回收.
-</code></pre><p>根据返回值分类:</p>
-<pre><code>void类型
-非void类型
-</code></pre><p>根据形式参数分类:</p>
-<pre><code>空参方法
-非空参方法
-</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getString</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"helloworld"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"show"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">		System.out.println(name);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">function</span><span class="params">(String s1,String s2)</span></span>&#123;</span><br><span class="line">		retrun s1 + s2;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StudentDemo</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		<span class="comment">//创建对象</span></span><br><span class="line">		Student s = <span class="keyword">new</span> Student();</span><br><span class="line">		<span class="comment">//调用无参无返回值方法</span></span><br><span class="line">		s.show();</span><br><span class="line">		<span class="comment">//调用无参有返回值方法</span></span><br><span class="line">		String result = s.getString();</span><br><span class="line">		System.out.println(result);</span><br><span class="line">		<span class="comment">//调用带参无返回值的方法</span></span><br><span class="line">		s.method(<span class="string">"Fatih"</span>);</span><br><span class="line">		<span class="comment">//调用带参带返回值的方法</span></span><br><span class="line">		String result2 = s.function(<span class="string">"hello"</span>,<span class="string">"world"</span>);</span><br><span class="line">		System.out.println(result2);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="创建对象内存图-1"><a href="#创建对象内存图-1" class="headerlink" title="创建对象内存图"></a>创建对象内存图</h3><p><img src="/2018/12/06/面向对象/创建对象.png" alt=""></p>
-<h3 id="static关键字"><a href="#static关键字" class="headerlink" title="static关键字"></a>static关键字</h3><h4 id="static关键字特点"><a href="#static关键字特点" class="headerlink" title="static关键字特点:"></a>static关键字特点:</h4><pre><code>A:随着类的加载而加载. eg:main方法
-B:优先于对象存在.
-C:被类的所有对象共享:
-如果某个成员变量是被所有对象共享的,那么它就应该定义为静态的.
-eg:饮水机(用静态修饰),水杯(不能用静态修饰)
-D:可以通过类名调用(本身也可以通过对象名调用)
-推荐使用类名调用
-</code></pre><p>静态修饰的内容一般称其为:与类相关的,类成员.</p>
-<p>static的内存图解:<br><img src="/2018/12/06/面向对象/static的内存图解.png" alt=""></p>
-<h4 id="static关键字注意事项"><a href="#static关键字注意事项" class="headerlink" title="static关键字注意事项"></a>static关键字注意事项</h4><pre><code>A:在静态方法中是没有this关键字的
-理解:静态是随着类的加载而加载,this是随着对象的创建而存在的.静态比对象先存在.
-
-B:静态方法只能访问静态的成员变量和静态的成员方法.
-
-静态方法:
-成员变量:只能访问静态变量.
-成员方法:只能访问静态成员方法.
-
-非静态方法:
-成员变量:可以是静态的,也可以是非静态的.
-成员方法:可以是静态的成员方法,也可以是非静态的成员方法.
-
-简单记:静态只能访问静态
-</code></pre><h4 id="静态变量和成员变量"><a href="#静态变量和成员变量" class="headerlink" title="静态变量和成员变量"></a>静态变量和成员变量</h4><p>所属不同</p>
-<pre><code>静态变量属于类,所以也成为类变量.
-成员变量属于对象,所以也成为实例变量(对象变量).
-</code></pre><p>内存中位置不同</p>
-<pre><code>静态变量存储于方法区的静态区.
-成员变量存储于堆内存.
-</code></pre><p>内存出现时间不同</p>
-<pre><code>静态变量随着类的加载而加载,随着类的消失而消失.
-成员变量随着对象的创建而存在,随着对象的消失而消失.
-</code></pre><p>调用不同</p>
-<pre><code>静态变量可以通过类名调用,也可以通过对象调用.
-成员变量只能通过对象名调用.
-</code></pre><h4 id="main方法格式详解"><a href="#main方法格式详解" class="headerlink" title="main方法格式详解"></a>main方法格式详解</h4><pre><code>public static void main (String[] args){...}
-
-public:公共的,访问权限是最大的.由于main方法是被jvm调用,所以权限要够大.
-
-static:静态的,不需要创建对象,通过类名就可以.方便jvm的调用.
-
-void:方法的返回值是返回给调用者,而main方法是被jvm调用.而返回给jvm没有意义.
-
-main:是一个常见的方法入口.几乎所有语言都是以main作为入口.
-
-String[] args:这是一个字符串数组.(早期是为了接收键盘录入的数据的)
-格式是:java 类名 xxx xxx xxx
-</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainDemo</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		System.out.println(args);<span class="comment">//[Ljava.lang.String;@175078b输出一个地址值</span></span><br><span class="line">		System.out.println(args.length);<span class="comment">//0</span></span><br><span class="line">		System.out.println(args[<span class="number">0</span>]);<span class="comment">//ArrayIndexOutOfBoundsException(越界)</span></span><br><span class="line"></span><br><span class="line">		cmd键入 java MainDemo hello world java</span><br><span class="line">		System.out.println(args);<span class="comment">//[Ljava.lang.String;@175078b输出一个地址值</span></span><br><span class="line">		System.out.println(args.length);<span class="comment">//3</span></span><br><span class="line">		System.out.println(args[<span class="number">0</span>]);<span class="comment">//hello</span></span><br><span class="line">		System.out.println(args[<span class="number">1</span>]);<span class="comment">//world</span></span><br><span class="line">		System.out.println(args[<span class="number">2</span>]);<span class="comment">//java</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
     
     
     
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://n0thingjy.github.io/2018/12/06/数组/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="n0thing">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="n0thing的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/06/数组/" class="post-title-link" itemprop="https://n0thingjy.github.io/index.html">数组</a>
-              
+    <article class="index-post">
+        <a class="abstract-title" href="/2018/12/08/继承/">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-06 23:03:13" itemprop="dateCreated datePublished" datetime="2018-12-06T23:03:13+08:00">2018-12-06</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-07 01:49:34" itemprop="dateModified" datetime="2018-12-07T01:49:34+08:00">2018-12-07</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+                <span>继承</span>
+        </a>
+        <div class="abstract-content">
+            概述多个类中存在相同属性和行为时，将这些内容抽取到单独一个类中，那么多个类无需再定义这些属性和行为，只要继承那个类即可。通过extends关键字可以实现类与类的继承
+class 子类名 extends父类名{}
+单独的这个类成为父类，基类或者超类；这多个类可以称位子类或者派生类。有了继承以后，我们定义一个类的时候，可以在一个已经存在的类的基础上，还可以定义自己的新成员。
+好处：1.提高代码复用性。2.提高了代码的维护性。3.让类与类之间产生了关系，是多态的前提。（即时好处也是弊端）弊端：1.类的耦合性增强了。
+开发原则：低耦合，高内聚。
+耦合：类与类的关系。
+内聚：就是自己完成某件事的能...
         </div>
-      </header>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/08</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
     
-
+        <a class="post-tag" href="javascript:void(0);" data-tags="Java学习总结">Java学习总结</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="面向对象">面向对象</a>
+    
+</div>
+            
+        </div>
+    </article>
     
     
     
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h2><h3 id="定义格式"><a href="#定义格式" class="headerlink" title="定义格式:"></a>定义格式:</h3><pre><code>A:数据类型[] 数组名;
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2018/12/07/代码块/">
+            
+                <span>代码块</span>
+        </a>
+        <div class="abstract-content">
+            代码块在Java中，使用{}括起来的代码被称为代码块，根据其位置和声明的不同，可以分为局部代码块，构造代码块，静态代码块，同步代码块。
+局部代码块在方法中出现；限定变量生命周期，及早释放，提高内存利用率。1234567891011121314public static void main(String[] args)&#123;	//局部代码块	&#123;		int x = 10;		System.out.println(x);	&#125;	//找不到符号，不能在代码块外使用。	System.out.println(x);	//代码块依次执行	&#123;		int x = 20;	...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/07</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Java学习总结">Java学习总结</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="面向对象">面向对象</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2018/12/06/帮助文档的制作以及使用/">
+            
+                <span>帮助文档的制作以及使用</span>
+        </a>
+        <div class="abstract-content">
+            制作工具类的说明书（文档注释）文档注释格式：
+/**
+*
+*
+*
+*
+*
+*
+*/
+字段
+@author  (作者)@version (版本)@param   (参数)@return  (返回值)
+javadoc格式：
+javadoc -d 目录 -author -version XXXX.java
+目录：可以写一个文件夹的路径注释文档中不需要写类型
+制作帮助文档出错：找不到可以文档化的公共或受保护的类：告诉我们类的权限不够。 （一般给类加上public就可以了）
+如何使用帮助文档(JDK API 1.6.0 中文版为例)以Scanner为例：1.打开帮助文档2.点击显示，找到索引，看到...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/06</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Java学习总结">Java学习总结</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="面向对象">面向对象</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2018/12/06/面向对象/">
+            
+                <span>面向对象</span>
+        </a>
+        <div class="abstract-content">
+            面向对象面向对象思想面向对象是基于面向过程面向过程:强调的是每一个功能的步骤.面向对象:强调的是对象,然后由对象去调用功能(强调结果).
+面向对象特点A:是一种更符合我们思想习惯的思想.B:可以将复杂的事情简单化.C:将我们以执行者变成指挥者.eg:自己去打水变成让别人去打水.
+举例买电脑面向过程:了解电脑 -&gt; 了解自己的需求 -&gt; 找对应的参数信息 -&gt; 去买电脑 -&gt; 讨价还价 -&gt; 买回电脑面向对象:要买电脑 -&gt; 找人去给我买 -&gt; 买回来了
+举例把大象装进冰箱面向过程:动作步骤:1.打开冰箱门 2.装进大象 3.关闭冰箱门123456...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/06</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Java学习总结">Java学习总结</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="面向对象">面向对象</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2018/12/06/数组/">
+            
+                <span>数组</span>
+        </a>
+        <div class="abstract-content">
+            一维数组定义格式:A:数据类型[] 数组名;
 B:数据类型 数组名[];
 eg: A:int[] a;
     B:int a[];
-</code></pre><p>推荐使用第一种.</p>
-<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">/*左边:</span></span><br><span class="line"><span class="comment">	 int:说明数组中的元素的数据类型是int类型.</span></span><br><span class="line"><span class="comment">	 []:说明这是一个数组.</span></span><br><span class="line"><span class="comment">	 arr:是数组的名称.</span></span><br><span class="line"><span class="comment">  右边:</span></span><br><span class="line"><span class="comment">	 new:为数组分配内存空间.</span></span><br><span class="line"><span class="comment">	 int:说明数组中的元素的数据类型是int类型.</span></span><br><span class="line"><span class="comment">	 []:说明这是一个数组.</span></span><br><span class="line"><span class="comment">	 3:数组长度,其实也就是数组中元素的个数.</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<h3 id="获取数组元素"><a href="#获取数组元素" class="headerlink" title="获取数组元素"></a>获取数组元素</h3><p>数组名[索引]<br>索引就是每个元素的编号,从0开始,最大索引是数组的长度-1.</p>
-<h3 id="数组内存分配"><a href="#数组内存分配" class="headerlink" title="数组内存分配"></a>数组内存分配</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> [] arr = <span class="keyword">new</span> <span class="keyword">int</span> [<span class="number">3</span>];</span><br><span class="line">System.out.println(arr); <span class="comment">//地址值</span></span><br><span class="line">System.out.println(arr[<span class="number">0</span>]); <span class="comment">//0</span></span><br><span class="line">System.out.println(arr[<span class="number">1</span>]); <span class="comment">//0</span></span><br><span class="line">System.out.println(arr[<span class="number">2</span>]); <span class="comment">//0</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://github.com/n0thingJy/n0thingjy.github.io/blob/master/images/%E9%85%8D%E5%9B%BE/%E6%95%B0%E7%BB%84%E5%86%85%E5%AD%98%E5%88%86%E5%B8%83.png?raw=true" alt=""></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义第一个数组</span></span><br><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line">arr[<span class="number">0</span>] = <span class="number">88</span>; <span class="comment">//88</span></span><br><span class="line">arr[<span class="number">1</span>] = <span class="number">33</span>; <span class="comment">//33</span></span><br><span class="line">arr[<span class="number">2</span>] = <span class="number">66</span>; <span class="comment">//66</span></span><br><span class="line"><span class="comment">//定义第二个数组</span></span><br><span class="line"><span class="keyword">int</span>[] arr2 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line">arr[<span class="number">0</span>] = <span class="number">22</span>; <span class="comment">//22</span></span><br><span class="line">arr[<span class="number">1</span>] = <span class="number">44</span>; <span class="comment">//44</span></span><br><span class="line">arr[<span class="number">2</span>] = <span class="number">55</span>; <span class="comment">//55</span></span><br><span class="line"><span class="comment">//定义第三个数组</span></span><br><span class="line"><span class="keyword">int</span>[] arr3 = arr;</span><br><span class="line">arr3[<span class="number">0</span>] = <span class="number">100</span>;<span class="comment">//100</span></span><br><span class="line">arr3[<span class="number">1</span>] = <span class="number">200</span>;<span class="comment">//200</span></span><br><span class="line"><span class="comment">/*改变arr3的值也改变了arr的值,arr的地址值赋给了arr3</span></span><br><span class="line"><span class="comment">  栈内存的两个引用指向同一个堆内存空间.</span></span><br><span class="line"><span class="comment">  无论是它们谁的操作,都是针对同一个地方.</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://github.com/n0thingJy/n0thingjy.github.io/blob/master/images/%E9%85%8D%E5%9B%BE/%E6%95%B0%E7%BB%84%E8%B5%8B%E5%80%BC%E9%97%AE%E9%A2%98.png?raw=true" alt=""></p>
-<hr>
-<h2 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h2><h3 id="定义格式-标准"><a href="#定义格式-标准" class="headerlink" title="定义格式(标准):"></a>定义格式(标准):</h3><pre><code>数据类型[ ][ ] 数组名 = new 数据类型[m][n];
-m表示这个二维数组有多少个一维数组.
-n表示每一个一维数组的元素个数.
-</code></pre><h3 id="其他格式"><a href="#其他格式" class="headerlink" title="其他格式:"></a>其他格式:</h3><pre><code>a:数据类型 数组名[ ][ ] = new 数据类型[m][n];
-b:数据类型[ ] 数组名[ ] = new 数据类型[m][n];
-c:数据类型[ ][ ] 数组名 = new 数据类型[m][n];(标准)
-d:数据类型[ ][ ] 数组名 = new 数据类型[m][ ];(一维数组元素个数可以动态给出)
-e:数据类型[ ][ ] 数组名 = new 数据类型[ ][ ]{{元素...},{元素...},{元素...}};(直接赋值)
-f:数据类型[ ][ ] 数组名 = {{元素...},{元素...},{元素...}};(e的简化版)
-</code></pre><hr>
-<h2 id="传递值问题"><a href="#传递值问题" class="headerlink" title="传递值问题"></a>传递值问题</h2><pre><code>基本类型传递值   ---&gt;   值(不改变方法中调用的值)
-引用类型传递值   ---&gt;   地址值(改变方法中调用的值)
-</code></pre>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://n0thingjy.github.io/2018/12/06/内存/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="n0thing">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="n0thing的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/06/内存/" class="post-title-link" itemprop="https://n0thingjy.github.io/index.html">内存</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-06 23:02:32 / 修改时间：23:37:42" itemprop="dateCreated datePublished" datetime="2018-12-06T23:02:32+08:00">2018-12-06</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+推荐使用第一种.
+初始化123456789101112int[] arr = new int[3];/*左边:	 int:说明数组中的元素的数据类型是int类型.	 []:说明这是一个数组.	 arr:是数组的名称.  右边:	 new:为数组分配内存空间.	 int:说明数组中的元素的数据类型是int类型.	 []:说明这是一个数组.	 3:数组长度,其实也就是数组中元素的个数.*/
+获取数组元素数组名[索引]索引就是每个元素的编号,从0开始,最大索引是...
         </div>
-      </header>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/06</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
     
-
+        <a class="post-tag" href="javascript:void(0);" data-tags="Java学习总结">Java学习总结</a>
+    
+</div>
+            
+        </div>
+    </article>
     
     
     
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="内存介绍"><a href="#内存介绍" class="headerlink" title="内存介绍"></a>内存介绍</h3><pre><code>栈内存:存放的是局部变量.(局部变量:在方法定义中或者方法声明上的变量都称为局部变量)
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2018/12/06/内存/">
+            
+                <span>内存</span>
+        </a>
+        <div class="abstract-content">
+            内存介绍栈内存:存放的是局部变量.(局部变量:在方法定义中或者方法声明上的变量都称为局部变量)
 堆内存:存放的是所有new出来的东西.
-</code></pre><h3 id="堆内存的特点"><a href="#堆内存的特点" class="headerlink" title="堆内存的特点"></a>堆内存的特点</h3><pre><code>A:每一个new出来的东西都有地址值.
+堆内存的特点A:每一个new出来的东西都有地址值.
 B:每个变量都有默认值.
   byte、short、int、long 默认值都是 0
   float、double 默认值都是 0.0
@@ -963,1957 +604,733 @@ B:每个变量都有默认值.
   boolean 默认值 false
   引用类型 默认值 null
 C:使用完毕就变成了垃圾,但是并没有立即回收.会在垃圾回收器空闲的时候回收.
-</code></pre><h3 id="栈内存的特点"><a href="#栈内存的特点" class="headerlink" title="栈内存的特点"></a>栈内存的特点</h3><pre><code>栈内存的数据用完就释放掉.
-</code></pre>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://n0thingjy.github.io/2018/12/06/转义字符/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="n0thing">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="n0thing的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/06/转义字符/" class="post-title-link" itemprop="https://n0thingjy.github.io/index.html">转义字符</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-06 23:02:13 / 修改时间：23:05:26" itemprop="dateCreated datePublished" datetime="2018-12-06T23:02:13+08:00">2018-12-06</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
+栈内存的特点栈内存的数据用完就释放掉.
 
         </div>
-      </header>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/06</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
     
-
+        <a class="post-tag" href="javascript:void(0);" data-tags="Java学习总结">Java学习总结</a>
+    
+</div>
+            
+        </div>
+    </article>
     
     
     
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h2><pre><code>&apos;\t&apos; tab键的位置
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2018/12/06/转义字符/">
+            
+                <span>转义字符</span>
+        </a>
+        <div class="abstract-content">
+            转义字符&apos;\t&apos; tab键的位置
 &apos;\r&apos; 回车
 &apos;\n&apos; 换行
-</code></pre>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://n0thingjy.github.io/2018/12/06/选择结构/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="n0thing">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="n0thing的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/06/选择结构/" class="post-title-link" itemprop="https://n0thingjy.github.io/index.html">选择结构</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-06 22:40:07 / 修改时间：23:38:50" itemprop="dateCreated datePublished" datetime="2018-12-06T22:40:07+08:00">2018-12-06</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
 
         </div>
-      </header>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/06</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
     
-
+        <a class="post-tag" href="javascript:void(0);" data-tags="Java学习总结">Java学习总结</a>
+    
+</div>
+            
+        </div>
+    </article>
     
     
     
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="选择结构-switch"><a href="#选择结构-switch" class="headerlink" title="选择结构(switch)"></a>选择结构(switch)</h2><p>switch语句结构 :<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>(表达式)&#123;</span><br><span class="line">	<span class="keyword">case</span>值<span class="number">1</span>:</span><br><span class="line">		语句体<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span>值<span class="number">2</span>:</span><br><span class="line">		语句体<span class="number">2</span>;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	...</span><br><span class="line">	<span class="keyword">default</span>:</span><br><span class="line">		语句体n+<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">break</span>;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>格式解释 :</p>
-<pre><code>switch:表示这是switch结构.
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2018/12/06/选择结构/">
+            
+                <span>选择结构</span>
+        </a>
+        <div class="abstract-content">
+            选择结构(switch)switch语句结构 :1234567891011switch(表达式)&#123;	case值1:		语句体1;		break;	case值2:		语句体2;		break;	...	default:		语句体n+1;		break;&#125;
+格式解释 :
+switch:表示这是switch结构.
 表达式:这个地方的取值是有限定的.
 eg:byte、short、int、char,
    JDK5以后可以是枚举,
    JDK7以后可以是String.
 case:后面跟的是要和**表达式**进行比较的值.
 语句体:要执行的代码.
-break:表示中断,结束的意思,可以控制switch的中断.
-default:当所有值都和表达式不匹配的时候,就执行default控制的语句,相当于if语句中的else.
-</code></pre><p>switch语句的注意事项 :</p>
-<pre><code>A:case后面只能是常量,不能是变量.而且,多个case后面的值不能相同.
-B:default可以省略,但不建议,因为它的作用是对不正确的情况给出提示.
-  特殊情况省略:case就可以把值固定 eg:选择题(A、B、C、D选项)
-C:break可以省略,但是结果可能不是想要的.
-D:default可以在任意位置,但建议在最后.
-E:switch语句的结束条件:
-  1.遇到break就结束.
-  2.执行到末尾就结束.
-</code></pre>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://n0thingjy.github.io/2018/12/06/运算符/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="n0thing">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="n0thing的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/06/运算符/" class="post-title-link" itemprop="https://n0thingjy.github.io/index.html">运算符</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-06 01:47:10 / 修改时间：22:35:21" itemprop="dateCreated datePublished" datetime="2018-12-06T01:47:10+08:00">2018-12-06</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+break:表示中断,结束的意...
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>含义</th>
-<th>用法</th>
-<th>结合方向</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>&amp;&amp;、&amp;</td>
-<td>逻辑与</td>
-<td>op1&amp;&amp;op2</td>
-<td>从左到右</td>
-</tr>
-<tr>
-<td>&#124;&#124;</td>
-<td>逻辑或</td>
-<td>op1&#124;&#124;op2</td>
-<td>从左到右</td>
-</tr>
-<tr>
-<td>!</td>
-<td>逻辑非</td>
-<td>!op</td>
-<td>从右到左</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h2><table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>运算</th>
-<th>举例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>&lt;&lt;</td>
-<td>左移</td>
-<td>3 &lt;&lt; 2 = 12 -&gt; 3 * 2 * 2 = 12</td>
-</tr>
-<tr>
-<td>&gt;&gt;</td>
-<td>右移</td>
-<td>3 &gt;&gt; 1 = 1 -&gt; 3 / 2 = 1</td>
-</tr>
-<tr>
-<td>&gt;&gt;&gt;</td>
-<td>无符号左移</td>
-<td>3&gt;&gt;&gt;1 = 1 -&gt; 3 / 2 = 1</td>
-</tr>
-<tr>
-<td>&amp;</td>
-<td>与运算</td>
-<td>6 &amp; 3 = 2</td>
-</tr>
-<tr>
-<td>&#124;</td>
-<td>或运算</td>
-<td>6 &#124; 3 = 7</td>
-</tr>
-<tr>
-<td>^</td>
-<td>异或运算</td>
-<td>6 ^ 3 = 5</td>
-</tr>
-<tr>
-<td>~</td>
-<td>反码</td>
-<td>~6 = 7</td>
-</tr>
-</tbody>
-</table>
-<p>要做位运算,首先要把数据转换为二进制. 注 : 二进制补码运算</p>
-<h3 id="lt-lt-位运算符"><a href="#lt-lt-位运算符" class="headerlink" title="&lt;&lt;位运算符"></a>&lt;&lt;位运算符</h3><p>&lt;&lt; : 左移(左边最高位丢弃,右边补齐0)</p>
-<p>eg : 3 &lt;&lt; 2 = 3 * 2 * 2 = 12</p>
-<table>
-<thead>
-<tr>
-<th>计算出3的二进制补码:</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>左移2位</td>
-<td>00000000 00000000 00000000 00000011</td>
-</tr>
-<tr>
-<td>最高位(00)舍弃</td>
-<td>00000000 00000000 00000000 00001100</td>
-</tr>
-</tbody>
-</table>
-<p>结论 : 把&lt;&lt;左边的数据*(乘以) 2的移动次幂</p>
-<h3 id="gt-gt-位运算符"><a href="#gt-gt-位运算符" class="headerlink" title="&gt;&gt;位运算符"></a>&gt;&gt;位运算符</h3><p>>> : 右移 最高位是0,左边补齐0;最高位是1,左边补齐1</p>
-<p>eg : 24 &gt;&gt; 2 = 24 / 2 ^ 2 = 6</p>
-<table>
-<thead>
-<tr>
-<th>计算出24的二进制补码:</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>右移2位</td>
-<td>00000000 00000000 00000000 00011000</td>
-</tr>
-<tr>
-<td>最高位补齐00</td>
-<td>00000000 00000000 00000000 00000110</td>
-</tr>
-</tbody>
-</table>
-<p>eg : -24 &gt;&gt; 2 = -24 / 2 ^ 2 = -6</p>
-<table>
-<thead>
-<tr>
-<th>计算出-24的二进制补码:</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>右移2位</td>
-<td>11111111 11111111 11111111 11101000</td>
-</tr>
-<tr>
-<td>最高位补齐11</td>
-<td>11111111 11111111 11111111 11111010</td>
-</tr>
-</tbody>
-</table>
-<p>结论 : 把&gt;&gt;左边的数据(除以) 2的移动次幂</p>
-<h3 id="gt-gt-gt-无符号右移"><a href="#gt-gt-gt-无符号右移" class="headerlink" title="&gt;&gt;&gt;无符号右移"></a>&gt;&gt;&gt;无符号右移</h3><p>>>> : 无论最高位是0还是1,左边补齐0</p>
-<p>eg : 24 &gt;&gt;&gt; 2 = 6</p>
-<table>
-<thead>
-<tr>
-<th>计算出24的二进制补码:</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>右移2位</td>
-<td>00000000 00000000 00000000 00011000</td>
-</tr>
-<tr>
-<td>最高位补齐00</td>
-<td>00000000 00000000 00000000 00000110</td>
-</tr>
-</tbody>
-</table>
-<p>eg : -24 &gt;&gt;&gt; 2 = 1073741818</p>
-<table>
-<thead>
-<tr>
-<th>计算出-24的二进制补码:</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>右移2位</td>
-<td>11111111 11111111 11111111 11101000</td>
-</tr>
-<tr>
-<td>最高位补齐00</td>
-<td>00111111 11111111 11111111 11111010</td>
-</tr>
-</tbody>
-</table>
-<h3 id="amp-位运算-有0则0"><a href="#amp-位运算-有0则0" class="headerlink" title="&amp;位运算(有0则0)"></a>&amp;位运算(有0则0)</h3><p>eg : 3 &amp; 4 = 0</p>
-<table>
-<thead>
-<tr>
-<th>数值</th>
-<th>转换为二进制</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>3</td>
-<td>00000000 00000000 00000000 00000011</td>
-</tr>
-<tr>
-<td>4</td>
-<td>00000000 00000000 00000000 00000100</td>
-</tr>
-<tr>
-<td>&amp;位运算后结果为<strong>0</strong></td>
-<td>00000000 00000000 00000000 00000000</td>
-</tr>
-</tbody>
-</table>
-<h3 id="位运算-有1则1"><a href="#位运算-有1则1" class="headerlink" title="|位运算(有1则1)"></a>|位运算(有1则1)</h3><p>eg : 3 &#124; 4 = 7</p>
-<table>
-<thead>
-<tr>
-<th>数值</th>
-<th>转换为二进制</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>3</td>
-<td>00000000 00000000 00000000 00000011</td>
-</tr>
-<tr>
-<td>4</td>
-<td>00000000 00000000 00000000 00000100</td>
-</tr>
-<tr>
-<td>&#124;位运算后结果为<strong>7</strong></td>
-<td>00000000 00000000 00000000 00000111</td>
-</tr>
-</tbody>
-</table>
-<h3 id="位异或运算-相同则0-不同则1"><a href="#位异或运算-相同则0-不同则1" class="headerlink" title="^位异或运算(相同则0,不同则1)"></a>^位异或运算(相同则0,不同则1)</h3><p>eg : 3 ^ 4 = 7</p>
-<table>
-<thead>
-<tr>
-<th>数值</th>
-<th>转换为二进制</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>3</td>
-<td>00000000 00000000 00000000 00000011</td>
-</tr>
-<tr>
-<td>4</td>
-<td>00000000 00000000 00000000 00000100</td>
-</tr>
-<tr>
-<td>^位运算后结果为<strong>7</strong></td>
-<td>00000000 00000000 00000000 00000111</td>
-</tr>
-</tbody>
-</table>
-<p>^异或位运算符特点:<br>a = 10 , b = 20<br>(a ^ b ^ b) = 10<br>(a ^ b ^ a) = 20<br>一个数据对另一个数据位异或两次,该数本身不变</p>
-<h3 id="按位取反运算符-0变1-1变0"><a href="#按位取反运算符-0变1-1变0" class="headerlink" title="~按位取反运算符(0变1,1变0)"></a>~按位取反运算符(0变1,1变0)</h3><p>eg : ~3 = -4</p>
-<table>
-<thead>
-<tr>
-<th>数值</th>
-<th>转换为二进制</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>3</td>
-<td>00000000 00000000 00000000 00000011</td>
-</tr>
-<tr>
-<td>~位运算后结果为<strong>-4</strong></td>
-<td>11111111 11111111 11111111 11111000(补码)</td>
-</tr>
-<tr>
-<td>补码</td>
-<td>11111111 11111111 11111111 11111000</td>
-</tr>
-<tr>
-<td>反码</td>
-<td>11111111 11111111 11111111 11111011</td>
-</tr>
-<tr>
-<td>原码<strong>(-4)</strong></td>
-<td>10000000 00000000 00000000 00000100</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="重点-三目运算符"><a href="#重点-三目运算符" class="headerlink" title="重点 : 三目运算符"></a>重点 : 三目运算符</h2><p>例 :<br>单目运算符 : -3<br>双目运算符 : 3 + 4<br>三目运算符(条件运算符) : </p>
-<pre><code>格式 : 比较表达式 ? 表达式1 : 表达式2
-</code></pre><p>比较表达式 : 结果是一个Boolean类型<br>根据比较表达式的计算返回一个true或者false,如果是true,就将<strong>表达式1</strong>作为结果.如果是false,就把<strong>表达式2</strong>作为结果.</p>
-<p>三目运算符例题 :<br>     比较三个整数的最大值 :<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> b = <span class="number">30</span>;</span><br><span class="line"><span class="keyword">int</span> c = <span class="number">20</span>;</span><br><span class="line"><span class="comment">//分两步</span></span><br><span class="line"><span class="keyword">int</span> temp = (a &gt; b) ? a : b;</span><br><span class="line"><span class="keyword">int</span> max = (temp &gt; c) ? temp : c;</span><br><span class="line"><span class="comment">//只一步</span></span><br><span class="line"><span class="keyword">int</span> max1 = (a &gt; b) ? ( (a &gt; c) ? a : c ) : ( (b &gt; c) ? b : c );</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://n0thingjy.github.io/2018/12/06/ASCII码表/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="n0thing">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="n0thing的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/06/ASCII码表/" class="post-title-link" itemprop="https://n0thingjy.github.io/index.html">ASCII码表</a>
-              
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/06</span>
+            </div>
+            <!-- tags  -->
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-06 01:39:56 / 修改时间：01:48:20" itemprop="dateCreated datePublished" datetime="2018-12-06T01:39:56+08:00">2018-12-06</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
+            <div class="abstract-tags">
     
-
+        <a class="post-tag" href="javascript:void(0);" data-tags="Java学习总结">Java学习总结</a>
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="ASCII码表"><a href="#ASCII码表" class="headerlink" title="ASCII码表"></a>ASCII码表</h2><p>ASCII（American Standard Code for Information Interchange，美国信息交换标准代码）是基于拉丁字母的一套电脑编码系统，主要用于显示现代英语和其他西欧语言。它是现今最通用的单字节编码系统，并等同于国际标准ISO/IEC 646。</p>
-<p><img src="https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=c05506e79482d158af8f51e3e16372bd/c2fdfc039245d688c56332adacc27d1ed21b2451.jpg" alt=""></p>
-<h2 id="需要记住的三个位置"><a href="#需要记住的三个位置" class="headerlink" title="需要记住的三个位置"></a>需要记住的三个位置</h2><p><strong>‘a’ 97</strong><br><strong>‘A’ 65</strong><br><strong>‘0’ 48</strong></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://n0thingjy.github.io/2018/12/06/数据类型/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="n0thing">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="n0thing的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/06/数据类型/" class="post-title-link" itemprop="https://n0thingjy.github.io/index.html">数据类型</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-06 00:27:24 / 修改时间：01:34:17" itemprop="dateCreated datePublished" datetime="2018-12-06T00:27:24+08:00">2018-12-06</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="数据类型分类"><a href="#数据类型分类" class="headerlink" title="数据类型分类"></a>数据类型分类</h3><p>A : 基本数据类型<br>B : 引用数据类型</p>
-<hr>
-<h3 id="基本数据类型-4类8种"><a href="#基本数据类型-4类8种" class="headerlink" title="基本数据类型(4类8种)"></a>基本数据类型(4类8种)</h3><h4 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h4><table>
-<thead>
-<tr>
-<th>整数类型</th>
-<th>占用字节数(8位等于1字节)</th>
-<th>表述范围</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>byte</td>
-<td>8位</td>
-<td>-128 ~ 127</td>
-</tr>
-<tr>
-<td>short</td>
-<td>16位</td>
-<td>-2^15 ~ 2^15 - 1</td>
-</tr>
-<tr>
-<td>int</td>
-<td>32位</td>
-<td>-2^31 ~ 2^31 - 1</td>
-</tr>
-<tr>
-<td>long</td>
-<td>64位</td>
-<td>-2^63 ~ 2^63 - 1</td>
-</tr>
-</tbody>
-</table>
-<h4 id="浮点类型"><a href="#浮点类型" class="headerlink" title="浮点类型"></a>浮点类型</h4><table>
-<thead>
-<tr>
-<th>浮点类型</th>
-<th>占用字节数(8位等于1字节)</th>
-<th>表述范围</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>float</td>
-<td>32位</td>
-<td>-3.40E+48 ~ +3.40E+38</td>
-</tr>
-<tr>
-<td>double</td>
-<td>64位</td>
-<td>-1.79E+308 ~ +1.79E+308</td>
-</tr>
-</tbody>
-</table>
-<h4 id="字符类型"><a href="#字符类型" class="headerlink" title="字符类型"></a>字符类型</h4><table>
-<thead>
-<tr>
-<th>字符类型</th>
-<th>占用字节数(8位等于1字节)</th>
-<th>表述范围</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>char</td>
-<td>16位</td>
-</tr>
-</tbody>
-</table>
-<h4 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h4><table>
-<thead>
-<tr>
-<th>布尔类型</th>
-<th>占用字节数(8位等于1字节)</th>
-<th>表述范围</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>boolean</td>
-<td>8位</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="数据转换"><a href="#数据转换" class="headerlink" title="数据转换"></a>数据转换</h2><h3 id="默认转换-从小到大的转换"><a href="#默认转换-从小到大的转换" class="headerlink" title="默认转换(从小到大的转换)"></a>默认转换(从小到大的转换)</h3><p>A : byte,short,char(一定会转换) - int - long - float - double<br>B : byte,short,char 相互之间不转换,他们参与运算首先转换为int类型.</p>
-<h3 id="强制转换"><a href="#强制转换" class="headerlink" title="强制转换"></a>强制转换</h3><p>目标类型 变量名 = (目标类型)(被转换的数据)</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://n0thingjy.github.io/2018/12/05/二进制/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="n0thing">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="n0thing的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/05/二进制/" class="post-title-link" itemprop="https://n0thingjy.github.io/index.html">二进制、原码、反码、补码问题</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-05 00:30:14" itemprop="dateCreated datePublished" datetime="2018-12-05T00:30:14+08:00">2018-12-05</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-06 01:36:36" itemprop="dateModified" datetime="2018-12-06T01:36:36+08:00">2018-12-06</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="字节大小"><a href="#字节大小" class="headerlink" title="字节大小"></a>字节大小</h2><p>1 byte = 8 bit<br>1 k = 1024 byte<br>一个字节是八位<br>eg : 00100100(这是一个字节)</p>
-<hr>
-<h2 id="进制组成与换算"><a href="#进制组成与换算" class="headerlink" title="进制组成与换算"></a>进制组成与换算</h2><h3 id="二进制"><a href="#二进制" class="headerlink" title="二进制"></a>二进制</h3><p>二进制(0b开头,由0,1组成)<br>eg : (10110110) = 2^7*1 + 2^6*0 + 2^5*1 + 2^4*1 + 2^3*0 + 2^2*1 + 2^1*1 + 2^0*0 = 182(<strong>十进制结果</strong>)</p>
-<h3 id="十进制"><a href="#十进制" class="headerlink" title="十进制"></a>十进制</h3><p>十进制(由0…..9组成)<br>eg : (182)</p>
-<h3 id="八进制"><a href="#八进制" class="headerlink" title="八进制"></a>八进制</h3><p>八进制(0开头,由0…7组成)<br>从右开始,每三位一个组合,最左边不够补0,然后分别算出十进制的值进行组合得到八进制的值.<br>eg : (0266) 010|110|110 = 2^2*0 + 2^1*1 + 2^0*0 | 2^2*1 + 2^1*1 + 2^0*0 | 2^2*1 + 2^1*1 + 2^0*0 = 266(<strong>八进制结果</strong>) = 2*8^2 + 6*8^1 + 6*8^0 = 182(<strong>十进制结果</strong>)</p>
-<h3 id="十六进制"><a href="#十六进制" class="headerlink" title="十六进制"></a>十六进制</h3><p>十六进制(0x开头,由0….9,a…f组成)<br>同理与八进制,每四位一个组合.<br>eg : (0xB6) 1011|0110 = 2^3*1 + 2^2*0 + 2^1*1 + 2^0*1 | 2^3*0 + 2^2*1 + 2^1*1 + 2^0*0 = B6(<strong>十六进制结果</strong>) = 11*16^1 + 6*16^0 = 182(<strong>十进制结果</strong>)</p>
-<hr>
-<h2 id="十进制转各种进制示意图"><a href="#十进制转各种进制示意图" class="headerlink" title="十进制转各种进制示意图"></a>十进制转各种进制示意图</h2><h3 id="十进制转其他进制"><a href="#十进制转其他进制" class="headerlink" title="十进制转其他进制:"></a>十进制转其他进制:</h3><p>口诀:除基取余,直到商为0,余数反转.<br><img src="https://github.com/n0thingJy/n0thingjy.github.io/blob/master/images/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/%E5%8D%81%E8%BF%9B%E5%88%B6%E8%BD%AC%E5%8D%81%E8%BF%9B%E5%88%B6.png?raw=true" alt=""></p>
-<p><center>十进制转十进制</center><br><img src="https://github.com/n0thingJy/n0thingjy.github.io/blob/master/images/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/%E5%8D%81%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E4%BA%8C%E8%BF%9B%E5%88%B6.png?raw=true" alt=""></p>
-<p><center>十进制转二进制</center><br><strong>十进制转八进制,十进制转十六进制同理</strong></p>
-<hr>
-<h2 id="原码-反码-补码"><a href="#原码-反码-补码" class="headerlink" title="原码,反码,补码"></a>原码,反码,补码</h2><h3 id="原码"><a href="#原码" class="headerlink" title="原码"></a>原码</h3><p>原码 : 正数的原码最高位是0.负数的最高位是1,其他的是数值位.</p>
-<table>
-<thead>
-<tr>
-<th>值</th>
-<th>符号位</th>
-<th>数值位</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>+7</td>
-<td>0</td>
-<td>0000111</td>
-</tr>
-<tr>
-<td>-7</td>
-<td>1</td>
-<td>0000111</td>
-</tr>
-</tbody>
-</table>
-<h3 id="反码"><a href="#反码" class="headerlink" title="反码"></a>反码</h3><p>反码 : 正数的反码和原码相同.负数的反码与原码符号位相同,数值位取反(就是1变0,0变1).</p>
-<table>
-<thead>
-<tr>
-<th>值</th>
-<th>符号位</th>
-<th>数值位</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>+7</td>
-<td>0</td>
-<td>0000111</td>
-</tr>
-<tr>
-<td>-7</td>
-<td>1</td>
-<td>1111000</td>
-</tr>
-</tbody>
-</table>
-<h3 id="补码"><a href="#补码" class="headerlink" title="补码"></a>补码</h3><p>补码 : 正数的补码与原码相同.负数的补码是在反码的基础上加1.</p>
-<table>
-<thead>
-<tr>
-<th>值</th>
-<th>符号位</th>
-<th>数值位</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>+7</td>
-<td>0</td>
-<td>0000111</td>
-</tr>
-<tr>
-<td>-7</td>
-<td>1</td>
-<td>1111001</td>
-</tr>
-</tbody>
-</table>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://n0thingjy.github.io/2018/12/04/Java初学小问题/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="n0thing">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="n0thing的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/04/Java初学小问题/" class="post-title-link" itemprop="https://n0thingjy.github.io/index.html">Java初学小问题</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-04 22:00:14" itemprop="dateCreated datePublished" datetime="2018-12-04T22:00:14+08:00">2018-12-04</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-05 00:24:53" itemprop="dateModified" datetime="2018-12-05T00:24:53+08:00">2018-12-05</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="CMD编译格式"><a href="#CMD编译格式" class="headerlink" title="CMD编译格式"></a>CMD编译格式</h2><p>javac + 文件名+ 扩展名 eg : javac HelloWorld.java (编译)<br>java + 类名(不加扩展名) eg : java HelloWorld (执行)</p>
-<hr>
-<h2 id="Java标识符及命名规则-见名知意"><a href="#Java标识符及命名规则-见名知意" class="headerlink" title="Java标识符及命名规则(见名知意)"></a>Java标识符及命名规则(见名知意)</h2><h3 id="标识符组成"><a href="#标识符组成" class="headerlink" title="标识符组成"></a>标识符组成</h3><p> 数字、字母、$、_<br> 注意 : Java关键字不可以作为标识符，(go to,const)为旧版本保留字段亦不可作为标识符使用。</p>
-<h3 id="包的命名"><a href="#包的命名" class="headerlink" title="包的命名"></a>包的命名</h3><p> 文件夹 单极 : xxx<br>        多级 : xxx.xxx.xxx<br> (全部字母小写)</p>
-<h3 id="类或接口"><a href="#类或接口" class="headerlink" title="类或接口"></a>类或接口</h3><p> 一个单词 : 单词的首字母必须大写 eg : Student,Dog<br> 多个单词 : 每个单词的首字母必须大写 eg : HelloWorld,StudentName</p>
-<h3 id="方法或变量"><a href="#方法或变量" class="headerlink" title="方法或变量"></a>方法或变量</h3><p> 一个单词 : 单词的首字母小写 eg : age,student<br> 多个单词 : 首字母小写,从第二个字母开始首字母大写 eg : studentAge,studentAllNames</p>
-<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p> 一个单词 : 全部大写 eg : PI<br> 多个单词 : 每个字母都大写,用_隔开 eg : STUDENT_MAX_AGE</p>
-<hr>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
-
-
-
-          </div>
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">n0thing</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">11</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                    <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                    <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">n0thing</span>
-
-  
-
-  
 </div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2018/12/06/运算符/">
+            
+                <span>运算符</span>
+        </a>
+        <div class="abstract-content">
+            逻辑运算符
 
 
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v6.6.0</div>
+运算符
+含义
+用法
+结合方向
 
 
 
 
+&amp;&amp;、&amp;
+逻辑与
+op1&amp;&amp;op2
+从左到右
+
+
+&#124;&#124;
+逻辑或
+op1&#124;&#124;op2
+从左到右
+
+
+!
+逻辑非
+!op
+从右到左
+
+
+
+
+位运算符
+
+
+运算符
+运算
+举例
+
+
+
+
+&lt;&lt;
+左移
+3 &lt;&lt; 2 = 12 -&gt; 3 * 2 * 2 = 12
+
+
+&gt;&gt;
+右移
+3 &gt;&gt; 1 = 1 -&gt; 3 / 2 = 1
+
+
+&gt;&gt;&gt;
+无符号左移
+3&gt;&gt;&gt;1 = 1 -&gt...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/06</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Java学习总结">Java学习总结</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    <!-- paginator  -->
+    
+    <nav class="page-nav">
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">NEXT &#62;</a>
+    </nav>
+    
+</main>
+            <!-- profile -->
+            
+            <div class="profile">
+    <img class="profile-avatar" alt="avatar" src="/avatar/i3.jpg">
+    <div class="profile-name">n0thing</div>
+    
+    <div class="profile-signature">
+        刚刚上路的小白
+    </div>
+    
+    
+    <div class="profile-social">
         
-
-
-
-
-
-
-
-
+    
         
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
+            
+                <a href="mailto:n0thingjyofficial@gmail.com" class="iconfont-archer email" title="email"></a>
+            
         
-      </div>
+    
+        
+            
+                <a href="//github.com/n0thingJy" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title="wechat">
+                  
+                  <img class="profile-qr" src="/assets/wechat.png">
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
     
 
+    </div>
     
-	
+    
+        <div class="friends">
+            <div>FRIENDS</div>
+            
+                
+            
+                
+            
+                
+            
+        </div>
+    
+    
+        <div class="about-me">
+            <a href="/about">ABOUT ME</a>
+        </div>
+    
+</div>
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:n0thingjyofficial@gmail.com" class="iconfont-archer email" title="email"></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/n0thingJy" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title="wechat">
+                  
+                  <img class="profile-qr" src="/assets/wechat.png">
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
     
 
+    </div>
     
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 15
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href="/2018/12/09/抽象类/">抽象类</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/08</span><a class="archive-post-title" href="/2018/12/08/继承/">继承</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/07</span><a class="archive-post-title" href="/2018/12/07/代码块/">代码块</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/2018/12/06/转义字符/">转义字符</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/2018/12/06/帮助文档的制作以及使用/">帮助文档的制作以及使用</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/2018/12/06/内存/">内存</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/2018/12/06/面向对象/">面向对象</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/2018/12/06/数组/">数组</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/2018/12/06/选择结构/">选择结构</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/2018/12/06/ASCII码表/">ASCII码表</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/2018/12/06/运算符/">运算符</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/2018/12/06/数据类型/">数据类型</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/05</span><a class="archive-post-title" href="/2018/12/05/二进制/">二进制、原码、反码、补码问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/04</span><a class="archive-post-title" href="/2018/12/04/Java初学小问题/">Java初学小问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/04</span><a class="archive-post-title" href="/2018/12/04/hello-world/">Hello World</a>
+        </li>
+    
+    </ul></div>
   </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="Java学习总结"><span class="iconfont-archer">&#xe606;</span>Java学习总结</span>
+    
+        <span class="sidebar-tag-name" data-tags="面向对象"><span class="iconfont-archer">&#xe606;</span>面向对象</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br>
+    1、请确保node版本大于6.2<br>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="Java"><span class="iconfont-archer">&#xe60a;</span>Java</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "n0thing"
+    }
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=6.6.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.6.0"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-</body>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+     
+    </body>
 </html>
+
+
