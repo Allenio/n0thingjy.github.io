@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>选择结构 · n0thing&#39;s blog</title>
+    <title>接口 · n0thing&#39;s blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">n0thing&#39;s blog</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">选择结构</a>
+                <a href="#" class="post-name">接口</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            选择结构
+            接口
             <!-- 404 -->
             
         </h1>
@@ -268,16 +268,18 @@ height:50vh;
     
         <a class="post-tag" href="javascript:void(0);" data-tags="Java学习总结">Java学习总结</a>
     
+        <a class="post-tag" href="javascript:void(0);" data-tags="面向对象">面向对象</a>
+    
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">304</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">669</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2018/12/06</span>
+                    <span class="post-intro-time">2018/12/10</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -401,35 +403,67 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="选择结构-switch"><a href="#选择结构-switch" class="headerlink" title="选择结构(switch)"></a>选择结构(switch)</h2><p>switch语句结构 :<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>(表达式)&#123;</span><br><span class="line">	<span class="keyword">case</span>值<span class="number">1</span>:</span><br><span class="line">		语句体<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span>值<span class="number">2</span>:</span><br><span class="line">		语句体<span class="number">2</span>;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	...</span><br><span class="line">	<span class="keyword">default</span>:</span><br><span class="line">		语句体n+<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">break</span>;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>格式解释 :</p>
-<pre><code>switch:表示这是switch结构.
-表达式:这个地方的取值是有限定的.
-eg:byte、short、int、char,
-   JDK5以后可以是枚举,
-   JDK7以后可以是String.
-case:后面跟的是要和**表达式**进行比较的值.
-语句体:要执行的代码.
-break:表示中断,结束的意思,可以控制switch的中断.
-default:当所有值都和表达式不匹配的时候,就执行default控制的语句,相当于if语句中的else.
-</code></pre><p>switch语句的注意事项 :</p>
-<pre><code>A:case后面只能是常量,不能是变量.而且,多个case后面的值不能相同.
-B:default可以省略,但不建议,因为它的作用是对不正确的情况给出提示.
-  特殊情况省略:case就可以把值固定 eg:选择题(A、B、C、D选项)
-C:break可以省略,但是结果可能不是想要的.
-D:default可以在任意位置,但建议在最后.
-E:switch语句的结束条件:
-  1.遇到break就结束.
-  2.执行到末尾就结束.
-</code></pre>
+        <h4 id="接口概述"><a href="#接口概述" class="headerlink" title="接口概述"></a>接口概述</h4><p>为了体现事物功能的扩展性，Java中就提供了接口来定义这些额外功能，并不给出具体实现。</p>
+<h4 id="接口特点"><a href="#接口特点" class="headerlink" title="接口特点"></a>接口特点</h4><p>1.接口用关键字interface表示</p>
+<ul>
+<li>格式：interface 接口名{}</li>
+</ul>
+<p>2.类实现接口用implements表示</p>
+<ul>
+<li>格式：class 类名 implements 接口名{}</li>
+</ul>
+<p>3.接口不能实例化</p>
+<ul>
+<li>可以按照多态的方式来实例化<br>A:具体类多态(几乎没有)<br>B:抽象类多态(常用)<br>C:接口多态(最常用)</li>
+</ul>
+<p>4.接口的子类<br>a:可以是抽象类,但是意义不大.<br>b:可以是具体类,要重写接口中的所有抽象方法.(主要用法)</p>
+<h4 id="接口成员特点"><a href="#接口成员特点" class="headerlink" title="接口成员特点"></a>接口成员特点</h4><p>成员变量:</p>
+<ul>
+<li>只能是常量</li>
+<li>默认修饰符 public static final（建议自己写出来，比较明确，不宜出错）<br>构造方法:</li>
+<li>接口没有构造方法。因为接口主要是扩展功能，而没有具体存在。<br>成员方法:</li>
+<li>只能是抽象方法</li>
+<li>默认修饰符 public abstract（建议自己写出来，比较明确，不宜出错）</li>
+</ul>
+<p>所有类都默认继承自一个类：object<br>类 object 是类层次结构的根类。每个类都使用 object 作为超类。</p>
+<h4 id="接口实现类格式-命名规则"><a href="#接口实现类格式-命名规则" class="headerlink" title="接口实现类格式(命名规则)"></a>接口实现类格式(命名规则)</h4><ul>
+<li><p>接口名+Impl这种格式是接口的实现类格式</p>
+<pre><code>class InterImpl implements Inter{
+
+}
+//InterImpl
+</code></pre></li>
+</ul>
+<h4 id="类与类-类与接口-接口与接口的关系"><a href="#类与类-类与接口-接口与接口的关系" class="headerlink" title="类与类,类与接口,接口与接口的关系"></a>类与类,类与接口,接口与接口的关系</h4><p>类与类</p>
+<ul>
+<li>继承关系，只能单继承，但是可以多层继承。<br>类与接口</li>
+<li>实现关系，可以单实现，也可以多实现。还可以在继承一个类的同时实现多个接口。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Mother</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">show2</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Object</span> <span class="keyword">implements</span> <span class="title">Father</span>,<span class="title">Mother</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"show son"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show2</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"show2 son"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>接口与接口</p>
+<ul>
+<li>继承关系，可以单继承，也可以多继承。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Mother</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">show2</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Sister</span> <span class="keyword">extends</span> <span class="title">Father</span>,<span class="title">Mother</span></span>&#123;</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	等于继承了</span></span><br><span class="line"><span class="comment">	public abstract void show();</span></span><br><span class="line"><span class="comment">	public abstract void show2();</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="抽象类和接口的区别"><a href="#抽象类和接口的区别" class="headerlink" title="抽象类和接口的区别"></a>抽象类和接口的区别</h4><p>成员区别</p>
+<ul>
+<li>抽象类:变量,常量;有抽象方法;抽象方法,非抽象方法.</li>
+<li>接口:常量;抽象方法.<br>关系区别</li>
+<li>类与类:继承,单继承</li>
+<li>类与接口:实现,单实现,多实现</li>
+<li>接口与接口:继承,单继承,多继承<br>设计理念区别</li>
+<li>抽象类:被继承体现的是:”is a”的关系.共性功能.抽象类中定义的是该继承体系的共性功能.</li>
+<li>接口:被实现体现的是:”like a”的关系.扩展功能.接口中定义的是该继承体系的扩展功能.</li>
+</ul>
+
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="https://n0thingjy.github.io">n0thing</a>
-            </p><p>原文链接：<a href="https://n0thingjy.github.io/2018/12/06/选择结构/">https://n0thingjy.github.io/2018/12/06/选择结构/</a>
-            </p><p>发表日期：<a href="https://n0thingjy.github.io/2018/12/06/选择结构/">十二月 6日 2018, 10:40:07 晚上</a>
-            </p><p>更新日期：<a href="https://n0thingjy.github.io/2018/12/06/选择结构/">December 6th 2018, 11:38:50 pm</a>
+            </p><p>原文链接：<a href="https://n0thingjy.github.io/2018/12/10/接口/">https://n0thingjy.github.io/2018/12/10/接口/</a>
+            </p><p>发表日期：<a href="https://n0thingjy.github.io/2018/12/10/接口/">十二月 10日 2018, 10:22:34 上午</a>
+            </p><p>更新日期：<a href="https://n0thingjy.github.io/2018/12/10/接口/">March 1st 2019, 7:27:57 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -438,16 +472,16 @@ E:switch语句的结束条件:
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href="/2018/12/06/转义字符/" title="转义字符">
-                    <div class="nextTitle">转义字符</div>
+                <a href="/2018/12/10/运动员与教练练习题/" title="运动员与教练练习题">
+                    <div class="nextTitle">运动员与教练练习题</div>
                 </a>
             
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2018/12/06/运算符/" title="运算符">
-                    <div class="prevTitle">运算符</div>
+                <a href="/2018/12/09/抽象类/" title="抽象类">
+                    <div class="prevTitle">抽象类</div>
                 </a>
             
         </li>
@@ -566,7 +600,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#选择结构-switch"><span class="toc-number">1.</span> <span class="toc-text">选择结构(switch)</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#接口概述"><span class="toc-number">1.</span> <span class="toc-text">接口概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#接口特点"><span class="toc-number">2.</span> <span class="toc-text">接口特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#接口成员特点"><span class="toc-number">3.</span> <span class="toc-text">接口成员特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#接口实现类格式-命名规则"><span class="toc-number">4.</span> <span class="toc-text">接口实现类格式(命名规则)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#类与类-类与接口-接口与接口的关系"><span class="toc-number">5.</span> <span class="toc-text">类与类,类与接口,接口与接口的关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#抽象类和接口的区别"><span class="toc-number">6.</span> <span class="toc-text">抽象类和接口的区别</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

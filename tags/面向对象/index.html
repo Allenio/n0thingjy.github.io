@@ -346,6 +346,88 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2018/12/11/形式参数和返回值的问题/">
+            
+                <span>形式参数和返回值的问题</span>
+        </a>
+        <div class="abstract-content">
+            形式参数基本类型引用类型:
+
+类名: (需要该类的对象)
+123456789101112131415161718192021222324class Student&#123;	public void study()&#123;		System.out.println("学习");	&#125;&#125;class StudentDemo&#123;	public void method(Student s)&#123;// ss; ss = new Student(); Student s = new Student();		s.study();	&#125;&#125;class S...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/11</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Java学习总结">Java学习总结</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="面向对象">面向对象</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2018/12/10/接口/">
+            
+                <span>接口</span>
+        </a>
+        <div class="abstract-content">
+            接口概述为了体现事物功能的扩展性，Java中就提供了接口来定义这些额外功能，并不给出具体实现。
+接口特点1.接口用关键字interface表示
+
+格式：interface 接口名{}
+
+2.类实现接口用implements表示
+
+格式：class 类名 implements 接口名{}
+
+3.接口不能实例化
+
+可以按照多态的方式来实例化A:具体类多态(几乎没有)B:抽象类多态(常用)C:接口多态(最常用)
+
+4.接口的子类a:可以是抽象类,但是意义不大.b:可以是具体类,要重写接口中的所有抽象方法.(主要用法)
+接口成员特点成员变量:
+
+只能是常量
+默认修饰符 public static...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/10</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Java学习总结">Java学习总结</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="面向对象">面向对象</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2018/12/09/抽象类/">
             
                 <span>抽象类</span>
@@ -829,9 +911,43 @@ javadoc -d 目录 -author -version XXXX.java
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 15
+        Total : 19
         </div>
         <!-- search  -->
         
@@ -844,6 +960,26 @@ javadoc -d 目录 -author -version XXXX.java
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/11</span><a class="archive-post-title" href="/2018/12/11/package概述及作用/">package概述及作用</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/11</span><a class="archive-post-title" href="/2018/12/11/形式参数和返回值的问题/">形式参数和返回值的问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/10</span><a class="archive-post-title" href="/2018/12/10/运动员与教练练习题/">运动员与教练练习题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/10</span><a class="archive-post-title" href="/2018/12/10/接口/">接口</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -862,12 +998,12 @@ javadoc -d 目录 -author -version XXXX.java
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/2018/12/06/转义字符/">转义字符</a>
+            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/2018/12/06/面向对象/">面向对象</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/2018/12/06/帮助文档的制作以及使用/">帮助文档的制作以及使用</a>
+            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/2018/12/06/转义字符/">转义字符</a>
         </li>
     
     
@@ -877,7 +1013,7 @@ javadoc -d 目录 -author -version XXXX.java
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/2018/12/06/面向对象/">面向对象</a>
+            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/2018/12/06/帮助文档的制作以及使用/">帮助文档的制作以及使用</a>
         </li>
     
     
@@ -928,6 +1064,8 @@ javadoc -d 目录 -author -version XXXX.java
         <span class="sidebar-tag-name" data-tags="Java学习总结"><span class="iconfont-archer">&#xe606;</span>Java学习总结</span>
     
         <span class="sidebar-tag-name" data-tags="面向对象"><span class="iconfont-archer">&#xe606;</span>面向对象</span>
+    
+        <span class="sidebar-tag-name" data-tags="例题"><span class="iconfont-archer">&#xe606;</span>例题</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

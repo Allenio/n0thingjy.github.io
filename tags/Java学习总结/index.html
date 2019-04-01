@@ -346,6 +346,140 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2018/12/11/package概述及作用/">
+            
+                <span>package概述及作用</span>
+        </a>
+        <div class="abstract-content">
+            包的概述
+其实就是文件夹
+作用:a:把相同的类名放到不同的包中b:对类进行分类管理
+
+eg:学生:增删改查老师:增删改查
+方1:按照功能分
+cn.school.add
+
+AddStudent
+AddTeachercn.school.delete
+DeleteStudent
+DeleteTeachercn.school.update
+UpdateStudent
+UpdateTeachercn.school.find
+FindStudent
+FindTeacher
+
+方2:
+cn.school.teacher
+
+AddTeacher
+DeleteTeacher
+UpdateTeacher
+F...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/11</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Java学习总结">Java学习总结</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2018/12/11/形式参数和返回值的问题/">
+            
+                <span>形式参数和返回值的问题</span>
+        </a>
+        <div class="abstract-content">
+            形式参数基本类型引用类型:
+
+类名: (需要该类的对象)
+123456789101112131415161718192021222324class Student&#123;	public void study()&#123;		System.out.println("学习");	&#125;&#125;class StudentDemo&#123;	public void method(Student s)&#123;// ss; ss = new Student(); Student s = new Student();		s.study();	&#125;&#125;class S...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/11</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Java学习总结">Java学习总结</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="面向对象">面向对象</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2018/12/10/接口/">
+            
+                <span>接口</span>
+        </a>
+        <div class="abstract-content">
+            接口概述为了体现事物功能的扩展性，Java中就提供了接口来定义这些额外功能，并不给出具体实现。
+接口特点1.接口用关键字interface表示
+
+格式：interface 接口名{}
+
+2.类实现接口用implements表示
+
+格式：class 类名 implements 接口名{}
+
+3.接口不能实例化
+
+可以按照多态的方式来实例化A:具体类多态(几乎没有)B:抽象类多态(常用)C:接口多态(最常用)
+
+4.接口的子类a:可以是抽象类,但是意义不大.b:可以是具体类,要重写接口中的所有抽象方法.(主要用法)
+接口成员特点成员变量:
+
+只能是常量
+默认修饰符 public static...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/10</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Java学习总结">Java学习总结</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="面向对象">面向对象</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2018/12/09/抽象类/">
             
                 <span>抽象类</span>
@@ -593,158 +727,6 @@ B:每个变量都有默认值.
 C:使用完毕就变成了垃圾,但是并没有立即回收.会在垃圾回收器空闲的时候回收.
 栈内存的特点栈内存的数据用完就释放掉.
 
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Java学习总结">Java学习总结</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/06/转义字符/">
-            
-                <span>转义字符</span>
-        </a>
-        <div class="abstract-content">
-            转义字符&apos;\t&apos; tab键的位置
-&apos;\r&apos; 回车
-&apos;\n&apos; 换行
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Java学习总结">Java学习总结</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/06/选择结构/">
-            
-                <span>选择结构</span>
-        </a>
-        <div class="abstract-content">
-            选择结构(switch)switch语句结构 :1234567891011switch(表达式)&#123;	case值1:		语句体1;		break;	case值2:		语句体2;		break;	...	default:		语句体n+1;		break;&#125;
-格式解释 :
-switch:表示这是switch结构.
-表达式:这个地方的取值是有限定的.
-eg:byte、short、int、char,
-   JDK5以后可以是枚举,
-   JDK7以后可以是String.
-case:后面跟的是要和**表达式**进行比较的值.
-语句体:要执行的代码.
-break:表示中断,结束的意...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Java学习总结">Java学习总结</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/06/运算符/">
-            
-                <span>运算符</span>
-        </a>
-        <div class="abstract-content">
-            逻辑运算符
-
-
-运算符
-含义
-用法
-结合方向
-
-
-
-
-&amp;&amp;、&amp;
-逻辑与
-op1&amp;&amp;op2
-从左到右
-
-
-&#124;&#124;
-逻辑或
-op1&#124;&#124;op2
-从左到右
-
-
-!
-逻辑非
-!op
-从右到左
-
-
-
-
-位运算符
-
-
-运算符
-运算
-举例
-
-
-
-
-&lt;&lt;
-左移
-3 &lt;&lt; 2 = 12 -&gt; 3 * 2 * 2 = 12
-
-
-&gt;&gt;
-右移
-3 &gt;&gt; 1 = 1 -&gt; 3 / 2 = 1
-
-
-&gt;&gt;&gt;
-无符号左移
-3&gt;&gt;&gt;1 = 1 -&gt...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1060,9 +1042,43 @@ op1&#124;&#124;op2
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 15
+        Total : 19
         </div>
         <!-- search  -->
         
@@ -1075,6 +1091,26 @@ op1&#124;&#124;op2
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/11</span><a class="archive-post-title" href="/2018/12/11/package概述及作用/">package概述及作用</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/11</span><a class="archive-post-title" href="/2018/12/11/形式参数和返回值的问题/">形式参数和返回值的问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/10</span><a class="archive-post-title" href="/2018/12/10/运动员与教练练习题/">运动员与教练练习题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/10</span><a class="archive-post-title" href="/2018/12/10/接口/">接口</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1093,12 +1129,12 @@ op1&#124;&#124;op2
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/2018/12/06/转义字符/">转义字符</a>
+            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/2018/12/06/面向对象/">面向对象</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/2018/12/06/帮助文档的制作以及使用/">帮助文档的制作以及使用</a>
+            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/2018/12/06/转义字符/">转义字符</a>
         </li>
     
     
@@ -1108,7 +1144,7 @@ op1&#124;&#124;op2
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/2018/12/06/面向对象/">面向对象</a>
+            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/2018/12/06/帮助文档的制作以及使用/">帮助文档的制作以及使用</a>
         </li>
     
     
@@ -1159,6 +1195,8 @@ op1&#124;&#124;op2
         <span class="sidebar-tag-name" data-tags="Java学习总结"><span class="iconfont-archer">&#xe606;</span>Java学习总结</span>
     
         <span class="sidebar-tag-name" data-tags="面向对象"><span class="iconfont-archer">&#xe606;</span>面向对象</span>
+    
+        <span class="sidebar-tag-name" data-tags="例题"><span class="iconfont-archer">&#xe606;</span>例题</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
